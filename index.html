@@ -13,9 +13,47 @@
     <!-- Open Graph -->
     <meta property="og:title" content="Bishal G. Tamang, Ph.D. — Crop Physiologist">
     <meta property="og:description" content="Research Scientist advancing agricultural sciences through innovative research in crop physiology and photosynthesis.">
-    <meta property="og:image" content="headshot.png">
+    <meta property="og:image" content="https://www.shootbiologist.com/headshot.png">
     <meta property="og:type" content="website">
-    
+    <meta property="og:url" content="https://www.shootbiologist.com">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Bishal G. Tamang, Ph.D. — Crop Physiologist">
+    <meta name="twitter:description" content="Research Scientist advancing agricultural sciences through innovative research in crop physiology and photosynthesis.">
+    <meta name="twitter:image" content="https://www.shootbiologist.com/headshot.png">
+    <meta name="twitter:site" content="@bgtamang">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.shootbiologist.com">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🌱%3C/text%3E%3C/svg%3E">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Bishal G. Tamang",
+        "jobTitle": "Research Scientist",
+        "affiliation": {
+            "@type": "Organization",
+            "name": "University of Illinois Urbana-Champaign"
+        },
+        "url": "https://www.shootbiologist.com",
+        "image": "https://www.shootbiologist.com/headshot.png",
+        "sameAs": [
+            "https://scholar.google.com/citations?user=NPp2jjwAAAAJ",
+            "https://orcid.org/0000-0003-4991-6354",
+            "https://github.com/bgtamang",
+            "https://www.linkedin.com/in/bishal-tamang-2b45bb37/",
+            "https://x.com/bgtamang"
+        ],
+        "knowsAbout": ["Crop Physiology", "Photosynthesis", "High-Throughput Phenotyping", "Soybean", "Plant Biology"]
+    }
+    </script>
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -920,7 +958,7 @@
             width: 48px;
             height: 48px;
             border: none;
-            background: white;
+            background: var(--color-paper);
             border-radius: 50%;
             cursor: pointer;
             display: flex;
@@ -1182,9 +1220,29 @@
         .floating {
             animation: float 6s ease-in-out infinite;
         }
+        /* Skip to content link */
+        .skip-link {
+            position: absolute;
+            top: -100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--color-accent);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0 0 8px 8px;
+            z-index: 10000;
+            font-weight: 500;
+            text-decoration: none;
+            transition: top 0.3s;
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
     </style>
 </head>
 <body>
+    <a href="#about" class="skip-link">Skip to content</a>
     <div class="page-wrapper">
         <!-- Navigation -->
         <nav class="nav" id="nav">
@@ -1342,13 +1400,13 @@
                     <p class="section-subtitle">For a complete list, visit my <a href="https://scholar.google.com/citations?user=NPp2jjwAAAAJ&hl=en&oi=ao" target="_blank" style="color: var(--color-accent);">Google Scholar profile</a>.</p>
                 </div>
                 
-                <div class="pub-categories">
-                    <button class="pub-tab active" onclick="showPubCategory('patents')">Patents</button>
-                    <button class="pub-tab" onclick="showPubCategory('selected')">Selected Publications</button>
-                    <button class="pub-tab" onclick="showPubCategory('preprints')">Preprints</button>
+                <div class="pub-categories" role="tablist" aria-label="Publication categories">
+                    <button class="pub-tab active" role="tab" aria-selected="true" aria-controls="patents" onclick="showPubCategory('patents', this)">Patents</button>
+                    <button class="pub-tab" role="tab" aria-selected="false" aria-controls="selected" onclick="showPubCategory('selected', this)">Selected Publications</button>
+                    <button class="pub-tab" role="tab" aria-selected="false" aria-controls="preprints" onclick="showPubCategory('preprints', this)">Preprints</button>
                 </div>
 
-                <div id="patents" class="pub-content active">
+                <div id="patents" class="pub-content active" role="tabpanel">
                     <div class="patents-grid">
                         <div class="patent-card">
                             <h4>Breeding soybean for reduced leaf area index</h4>
@@ -1365,8 +1423,15 @@
                     </div>
                 </div>
 
-                <div id="selected" class="pub-content">
+                <div id="selected" class="pub-content" role="tabpanel">
                     <ul class="pub-list">
+                        <li class="pub-item">
+                            <a href="https://doi.org/10.1002/plr2.70045" target="_blank">
+                                <div class="pub-title">Registration of four soybean lines in a common genetic background with contrasting leaf shape</div>
+                                <div class="pub-authors">Tamang BG, BW Diers, EA Ainsworth</div>
+                                <div class="pub-journal">Journal of Plant Registrations, 2025</div>
+                            </a>
+                        </li>
                         <li class="pub-item">
                             <a href="https://doi.org/10.1093/plphys/kiaf663" target="_blank">
                                 <div class="pub-title">Bigger is not always better: optimizing leaf area index with narrow leaf shape in soybean</div>
@@ -1426,17 +1491,16 @@
                     </ul>
                 </div>
 
-                <div id="preprints" class="pub-content">
+                <div id="preprints" class="pub-content" role="tabpanel">
                     <ul class="pub-list">
                         <li class="pub-item">
-                            <a href="#" target="_blank">
-                                <div class="pub-title">Registration of four soybean germplasms in a common genetic background with contrasting leaf shapes</div>
-                                <div class="pub-authors">Tamang BG, BW Diers, EA Ainsworth</div>
-                                <div class="pub-journal">Journal of Plant Registrations, 2025</div>
-                            </a>
+                            <div>
+                                <div class="pub-title" style="color: var(--color-ink-muted); font-style: italic;">Coming soon</div>
+                            </div>
                         </li>
                     </ul>
                 </div>
+
             </div>
         </section>
 
@@ -1450,7 +1514,17 @@
                 <div class="news-grid">
                     <div class="news-card">
                         <div class="news-image-wrapper">
-                            <img src="images/news/tamang_2025_pp.jpg" alt="Plant Physiology 2025 publication" class="news-image">
+                            <img src="images/news/registration_2025.jpg" alt="Journal of Plant Registrations 2025" class="news-image" loading="lazy">
+                        </div>
+                        <div class="news-body">
+                            <div class="news-date">March 2026</div>
+                            <h3 class="news-title">New Publication in Journal of Plant Registrations</h3>
+                            <p class="news-excerpt">Our paper on the registration of four soybean germplasms with contrasting leaf shapes in a common genetic background is now published.</p>
+                        </div>
+                    </div>
+                    <div class="news-card">
+                        <div class="news-image-wrapper">
+                            <img src="images/news/tamang_2025_pp.jpg" alt="Plant Physiology 2025 publication" class="news-image" loading="lazy">
                         </div>
                         <div class="news-body">
                             <div class="news-date">December 2025</div>
@@ -1460,7 +1534,7 @@
                     </div>
                     <div class="news-card">
                         <div class="news-image-wrapper">
-                            <img src="images/news/fao_1.jpg" alt="FAO Conference" class="news-image">
+                            <img src="images/news/fao_1.jpg" alt="FAO Conference" class="news-image" loading="lazy">
                         </div>
                         <div class="news-body">
                             <div class="news-date">June 2025</div>
@@ -1470,7 +1544,7 @@
                     </div>
                     <div class="news-card">
                         <div class="news-image-wrapper">
-                            <img src="images/news/AGBT_2025_1.jpg" alt="AGBT 2025" class="news-image">
+                            <img src="images/news/AGBT_2025_1.jpg" alt="AGBT 2025" class="news-image" loading="lazy">
                         </div>
                         <div class="news-body">
                             <div class="news-date">February 2025</div>
@@ -1480,7 +1554,7 @@
                     </div>
                     <div class="news-card">
                         <div class="news-image-wrapper">
-                            <img src="images/news/Monnens_2024.jpg" alt="Functional Plant Biology" class="news-image">
+                            <img src="images/news/Monnens_2024.jpg" alt="Functional Plant Biology" class="news-image" loading="lazy">
                         </div>
                         <div class="news-body">
                             <div class="news-date">November 2024</div>
@@ -1497,7 +1571,7 @@
                     </div>
                     <div class="news-card">
                         <div class="news-image-wrapper">
-                            <img src="images/news/SBW_2024.jpeg" alt="Soybean Breeders Workshop" class="news-image">
+                            <img src="images/news/SBW_2024.jpeg" alt="Soybean Breeders Workshop" class="news-image" loading="lazy">
                         </div>
                         <div class="news-body">
                             <div class="news-date">August 2024</div>
@@ -1517,119 +1591,245 @@
                     <h2 class="section-title">Research Gallery</h2>
                 </div>
                 
-                <div class="gallery-tabs">
-                    <button class="gallery-tab active" onclick="showGallery('field')">Field Research</button>
-                    <button class="gallery-tab" onclick="showGallery('lab')">Laboratory</button>
-                    <button class="gallery-tab" onclick="showGallery('phenotyping')">Phenotyping</button>
-                    <button class="gallery-tab" onclick="showGallery('team')">Team</button>
+                <div class="gallery-tabs" role="tablist" aria-label="Gallery categories">
+                    <button class="gallery-tab active" role="tab" aria-selected="true" onclick="showGallery('field', this)">Field Research</button>
+                    <button class="gallery-tab" role="tab" aria-selected="false" onclick="showGallery('lab', this)">Laboratory</button>
+                    <button class="gallery-tab" role="tab" aria-selected="false" onclick="showGallery('phenotyping', this)">Phenotyping</button>
+                    <button class="gallery-tab" role="tab" aria-selected="false" onclick="showGallery('team', this)">Team</button>
                 </div>
 
-                <div id="field-gallery" class="gallery-content active">
+                <div id="field-gallery" class="gallery-content active" role="tabpanel">
                     <div class="gallery-slider">
                         <div class="gallery-slides" id="field-slides">
                             <div class="gallery-slide">
-                                <img src="images/gallery/field/field_1.jpg" alt="Field Research">
+                                <img src="images/gallery/field/field_1.jpg" alt="Soybean field trial planting" loading="lazy">
                                 <div class="gallery-caption">
                                     <h4>Soybean Field Trials</h4>
                                     <p>Mechanical planting of experimental plots</p>
                                 </div>
                             </div>
                             <div class="gallery-slide">
-                                <img src="images/gallery/field/field_2.jpg" alt="Leaf Shape">
+                                <img src="images/gallery/field/field_2.jpg" alt="Soybean leaf shape diversity" loading="lazy">
                                 <div class="gallery-caption">
                                     <h4>Leaf Shape Diversity</h4>
                                     <p>Soybean leaf trait diversity in field</p>
                                 </div>
                             </div>
                             <div class="gallery-slide">
-                                <img src="images/gallery/field/field_3.jpg" alt="Field Research">
+                                <img src="images/gallery/field/field_3.jpg" alt="Multi-environment experimental plots" loading="lazy">
                                 <div class="gallery-caption">
                                     <h4>Experimental Plots</h4>
                                     <p>Multi-environment trial setup</p>
                                 </div>
                             </div>
+                            <div class="gallery-slide">
+                                <img src="images/gallery/field/Soybeans.jpg" alt="Soybean plants in field" loading="lazy">
+                                <div class="gallery-caption">
+                                    <h4>Soybean Canopy</h4>
+                                    <p>Soybean canopy development in experimental field</p>
+                                </div>
+                            </div>
+                            <div class="gallery-slide">
+                                <img src="images/gallery/field/mechanical_harvest.jpg" alt="Mechanical harvest of soybean plots" loading="lazy">
+                                <div class="gallery-caption">
+                                    <h4>Mechanical Harvest</h4>
+                                    <p>Plot combine harvesting experimental soybean trials</p>
+                                </div>
+                            </div>
+                            <div class="gallery-slide">
+                                <img src="images/gallery/field/hand harvest.jpg" alt="Hand harvesting soybean samples" loading="lazy">
+                                <div class="gallery-caption">
+                                    <h4>Hand Harvest</h4>
+                                    <p>Collecting yield samples from individual plots</p>
+                                </div>
+                            </div>
+                            <div class="gallery-slide">
+                                <img src="images/gallery/field/sampling.jpg" alt="Field sampling" loading="lazy">
+                                <div class="gallery-caption">
+                                    <h4>Field Sampling</h4>
+                                    <p>Collecting tissue samples for physiological analysis</p>
+                                </div>
+                            </div>
+                            <div class="gallery-slide">
+                                <img src="images/gallery/field/co2-refill.jpg" alt="CO2 enrichment refill" loading="lazy">
+                                <div class="gallery-caption">
+                                    <h4>CO₂ Enrichment</h4>
+                                    <p>Refilling CO₂ supply for elevated CO₂ experiments</p>
+                                </div>
+                            </div>
                         </div>
-                        <button class="gallery-nav prev" onclick="changeGallerySlide('field', -1)">‹</button>
-                        <button class="gallery-nav next" onclick="changeGallerySlide('field', 1)">›</button>
+                        <button class="gallery-nav prev" onclick="changeGallerySlide('field', -1)" aria-label="Previous slide">‹</button>
+                        <button class="gallery-nav next" onclick="changeGallerySlide('field', 1)" aria-label="Next slide">›</button>
                         <div class="gallery-dots" id="field-dots"></div>
                     </div>
                 </div>
 
-                <div id="lab-gallery" class="gallery-content">
+                <div id="lab-gallery" class="gallery-content" role="tabpanel">
                     <div class="gallery-slider">
                         <div class="gallery-slides" id="lab-slides">
                             <div class="gallery-slide">
-                                <img src="images/gallery/lab/lab_1.jpg" alt="Laboratory Research">
+                                <img src="images/gallery/lab/lab_1.jpg" alt="Molecular analysis in lab" loading="lazy">
                                 <div class="gallery-caption">
                                     <h4>Molecular Analysis</h4>
                                     <p>Advanced laboratory techniques</p>
                                 </div>
                             </div>
                             <div class="gallery-slide">
-                                <img src="images/gallery/lab/lab_2.jpg" alt="Laboratory">
+                                <img src="images/gallery/lab/lab_2.jpg" alt="Sample processing" loading="lazy">
                                 <div class="gallery-caption">
                                     <h4>Sample Processing</h4>
                                     <p>High-throughput sample analysis</p>
                                 </div>
                             </div>
+                            <div class="gallery-slide">
+                                <img src="images/gallery/lab/lab_3.jpg" alt="Laboratory research" loading="lazy">
+                                <div class="gallery-caption">
+                                    <h4>Laboratory Research</h4>
+                                    <p>Physiological and molecular assays</p>
+                                </div>
+                            </div>
+                            <div class="gallery-slide">
+                                <img src="images/gallery/lab/greenhouse plants.jpg" alt="Greenhouse soybean plants" loading="lazy">
+                                <div class="gallery-caption">
+                                    <h4>Greenhouse Studies</h4>
+                                    <p>Controlled environment plant growth</p>
+                                </div>
+                            </div>
+                            <div class="gallery-slide">
+                                <img src="images/gallery/lab/chamber.jpg" alt="Growth chamber" loading="lazy">
+                                <div class="gallery-caption">
+                                    <h4>Growth Chambers</h4>
+                                    <p>Controlled environment experiments</p>
+                                </div>
+                            </div>
+                            <div class="gallery-slide">
+                                <img src="images/gallery/lab/arabidopsis.jpg" alt="Arabidopsis research" loading="lazy">
+                                <div class="gallery-caption">
+                                    <h4>Arabidopsis Research</h4>
+                                    <p>Model organism studies for gene validation</p>
+                                </div>
+                            </div>
                         </div>
-                        <button class="gallery-nav prev" onclick="changeGallerySlide('lab', -1)">‹</button>
-                        <button class="gallery-nav next" onclick="changeGallerySlide('lab', 1)">›</button>
+                        <button class="gallery-nav prev" onclick="changeGallerySlide('lab', -1)" aria-label="Previous slide">‹</button>
+                        <button class="gallery-nav next" onclick="changeGallerySlide('lab', 1)" aria-label="Next slide">›</button>
                         <div class="gallery-dots" id="lab-dots"></div>
                     </div>
                 </div>
 
-                <div id="phenotyping-gallery" class="gallery-content">
+                <div id="phenotyping-gallery" class="gallery-content" role="tabpanel">
                     <div class="gallery-slider">
                         <div class="gallery-slides" id="phenotyping-slides">
                             <div class="gallery-slide">
-                                <img src="images/gallery/phenotyping/phenotyping_1.jpg" alt="Phenotyping">
+                                <img src="images/gallery/phenotyping/phenotyping_1.jpg" alt="UAV-based phenotyping" loading="lazy">
                                 <div class="gallery-caption">
                                     <h4>UAV-Based Imaging</h4>
-                                    <p>Multispectral data collection</p>
+                                    <p>Multispectral data collection over soybean trials</p>
                                 </div>
                             </div>
                             <div class="gallery-slide">
-                                <img src="images/gallery/phenotyping/phenotyping_8.gif" alt="Phenotyping">
+                                <img src="images/gallery/phenotyping/phenotyping_8.gif" alt="UAV multispectral imaging animation" loading="lazy">
                                 <div class="gallery-caption">
                                     <h4>UAV Multispectral Imaging</h4>
-                                    <p>Soybean field trials imagery</p>
+                                    <p>Soybean field trials imagery across timepoints</p>
+                                </div>
+                            </div>
+                            <div class="gallery-slide">
+                                <img src="images/gallery/phenotyping/drone.png" alt="Research drone" loading="lazy">
+                                <div class="gallery-caption">
+                                    <h4>Research Drone</h4>
+                                    <p>Multispectral UAV platform for high-throughput phenotyping</p>
+                                </div>
+                            </div>
+                            <div class="gallery-slide">
+                                <img src="images/gallery/phenotyping/licor6800.jpg" alt="LI-COR 6800 gas exchange measurement" loading="lazy">
+                                <div class="gallery-caption">
+                                    <h4>Gas Exchange Measurements</h4>
+                                    <p>LI-COR 6800 portable photosynthesis system in the field</p>
+                                </div>
+                            </div>
+                            <div class="gallery-slide">
+                                <img src="images/gallery/phenotyping/SPAD.jpg" alt="SPAD chlorophyll measurement" loading="lazy">
+                                <div class="gallery-caption">
+                                    <h4>Chlorophyll Content</h4>
+                                    <p>SPAD meter for rapid leaf chlorophyll assessment</p>
+                                </div>
+                            </div>
+                            <div class="gallery-slide">
+                                <img src="images/gallery/phenotyping/robots.jpg" alt="Phenotyping robots" loading="lazy">
+                                <div class="gallery-caption">
+                                    <h4>Robotic Phenotyping</h4>
+                                    <p>Automated ground-based sensing platforms</p>
+                                </div>
+                            </div>
+                            <div class="gallery-slide">
+                                <img src="images/gallery/phenotyping/spydercam.jpg" alt="SpyderCam field phenotyping" loading="lazy">
+                                <div class="gallery-caption">
+                                    <h4>SpyderCam System</h4>
+                                    <p>Cable-suspended camera for continuous field monitoring</p>
+                                </div>
+                            </div>
+                            <div class="gallery-slide">
+                                <img src="images/gallery/phenotyping/photosynq.jpg" alt="PhotosynQ measurement" loading="lazy">
+                                <div class="gallery-caption">
+                                    <h4>PhotosynQ</h4>
+                                    <p>Handheld photosynthesis measurements for citizen science</p>
                                 </div>
                             </div>
                         </div>
-                        <button class="gallery-nav prev" onclick="changeGallerySlide('phenotyping', -1)">‹</button>
-                        <button class="gallery-nav next" onclick="changeGallerySlide('phenotyping', 1)">›</button>
+                        <button class="gallery-nav prev" onclick="changeGallerySlide('phenotyping', -1)" aria-label="Previous slide">‹</button>
+                        <button class="gallery-nav next" onclick="changeGallerySlide('phenotyping', 1)" aria-label="Next slide">›</button>
                         <div class="gallery-dots" id="phenotyping-dots"></div>
                     </div>
                 </div>
 
-                <div id="team-gallery" class="gallery-content">
+                <div id="team-gallery" class="gallery-content" role="tabpanel">
                     <div class="gallery-slider">
                         <div class="gallery-slides" id="team-slides">
                             <div class="gallery-slide">
-                                <img src="images/gallery/team/team_1.jpg" alt="Team">
+                                <img src="images/gallery/team/team_1.jpg" alt="Ainsworth Lab group photo" loading="lazy">
                                 <div class="gallery-caption">
                                     <h4>Ainsworth Lab 2024</h4>
                                     <p>Current and past members</p>
                                 </div>
                             </div>
                             <div class="gallery-slide">
-                                <img src="images/gallery/team/team_2.jpg" alt="Field Crew">
+                                <img src="images/gallery/team/team_2.jpg" alt="Field crew planting trials" loading="lazy">
                                 <div class="gallery-caption">
                                     <h4>Field Crew</h4>
                                     <p>Planting soybean field trials</p>
                                 </div>
                             </div>
                             <div class="gallery-slide">
-                                <img src="images/gallery/team/team_3.jpg" alt="Crossing Team">
+                                <img src="images/gallery/team/team_3.jpg" alt="Crossing team in Puerto Rico" loading="lazy">
                                 <div class="gallery-caption">
                                     <h4>Crossing Team</h4>
-                                    <p>Puerto Rico crossing team</p>
+                                    <p>Puerto Rico crossing nursery</p>
+                                </div>
+                            </div>
+                            <div class="gallery-slide">
+                                <img src="images/gallery/team/team_4.jpg" alt="Research team" loading="lazy">
+                                <div class="gallery-caption">
+                                    <h4>Research Team</h4>
+                                    <p>Collaborative field research</p>
+                                </div>
+                            </div>
+                            <div class="gallery-slide">
+                                <img src="images/gallery/team/team_5.jpg" alt="Team in the field" loading="lazy">
+                                <div class="gallery-caption">
+                                    <h4>Summer Field Season</h4>
+                                    <p>Team during peak growing season</p>
+                                </div>
+                            </div>
+                            <div class="gallery-slide">
+                                <img src="images/gallery/team/team cicada.jpg" alt="Team with periodical cicadas" loading="lazy">
+                                <div class="gallery-caption">
+                                    <h4>Cicada Season</h4>
+                                    <p>Fieldwork during the periodical cicada emergence</p>
                                 </div>
                             </div>
                         </div>
-                        <button class="gallery-nav prev" onclick="changeGallerySlide('team', -1)">‹</button>
-                        <button class="gallery-nav next" onclick="changeGallerySlide('team', 1)">›</button>
+                        <button class="gallery-nav prev" onclick="changeGallerySlide('team', -1)" aria-label="Previous slide">‹</button>
+                        <button class="gallery-nav next" onclick="changeGallerySlide('team', 1)" aria-label="Next slide">›</button>
                         <div class="gallery-dots" id="team-dots"></div>
                     </div>
                 </div>
@@ -1744,7 +1944,7 @@
 
         <!-- Footer -->
         <footer class="footer">
-            <p>© 2025 Bishal G. Tamang. All rights reserved. · <a href="https://illinois.edu" target="_blank">University of Illinois</a></p>
+            <p>© <script>document.write(new Date().getFullYear())</script> Bishal G. Tamang. All rights reserved. · <a href="https://illinois.edu" target="_blank">University of Illinois</a></p>
         </footer>
     </div>
 
@@ -1840,21 +2040,29 @@
         heroObserver.observe(document.querySelector('.hero'));
 
         // Publication tabs
-        function showPubCategory(category) {
+        function showPubCategory(category, btn) {
             document.querySelectorAll('.pub-content').forEach(el => el.classList.remove('active'));
-            document.querySelectorAll('.pub-tab').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.pub-tab').forEach(el => {
+                el.classList.remove('active');
+                el.setAttribute('aria-selected', 'false');
+            });
             document.getElementById(category).classList.add('active');
-            event.target.classList.add('active');
+            btn.classList.add('active');
+            btn.setAttribute('aria-selected', 'true');
         }
 
         // Gallery functionality
         const galleryState = { field: 0, lab: 0, phenotyping: 0, team: 0 };
 
-        function showGallery(category) {
+        function showGallery(category, btn) {
             document.querySelectorAll('.gallery-content').forEach(el => el.classList.remove('active'));
-            document.querySelectorAll('.gallery-tab').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.gallery-tab').forEach(el => {
+                el.classList.remove('active');
+                el.setAttribute('aria-selected', 'false');
+            });
             document.getElementById(category + '-gallery').classList.add('active');
-            event.target.classList.add('active');
+            btn.classList.add('active');
+            btn.setAttribute('aria-selected', 'true');
             initGalleryDots(category);
         }
 
