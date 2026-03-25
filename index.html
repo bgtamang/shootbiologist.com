@@ -1,0 +1,1920 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bishal G. Tamang, Ph.D. — Crop Physiologist</title>
+    
+    <!-- Enhanced SEO Meta Tags -->
+    <meta name="description" content="Bishal G. Tamang is a Research Scientist at University of Illinois Urbana-Champaign, specializing in crop physiology, photosynthesis research, and high-throughput phenotyping.">
+    <meta name="keywords" content="Bishal Tamang, crop physiology, photosynthesis, RIPE project, plant biology, University of Illinois">
+    <meta name="author" content="Bishal G. Tamang">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Bishal G. Tamang, Ph.D. — Crop Physiologist">
+    <meta property="og:description" content="Research Scientist advancing agricultural sciences through innovative research in crop physiology and photosynthesis.">
+    <meta property="og:image" content="headshot.png">
+    <meta property="og:type" content="website">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --color-ink: #1a1a1a;
+            --color-ink-light: #4a4a4a;
+            --color-ink-muted: #7a7a7a;
+            --color-paper: #faf9f7;
+            --color-paper-warm: #f5f3ef;
+            --color-accent: #2d5a3d;
+            --color-accent-light: #3d7a52;
+            --color-accent-glow: rgba(45, 90, 61, 0.1);
+            --color-gold: #b8860b;
+            --color-border: rgba(26, 26, 26, 0.08);
+            --color-border-strong: rgba(26, 26, 26, 0.15);
+            
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'DM Sans', -apple-system, sans-serif;
+            
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 2rem;
+            --space-lg: 4rem;
+            --space-xl: 8rem;
+            
+            --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        [data-theme="dark"] {
+            --color-ink: #e8e6e3;
+            --color-ink-light: #b8b5b0;
+            --color-ink-muted: #8a8780;
+            --color-paper: #141413;
+            --color-paper-warm: #1c1b1a;
+            --color-accent: #5ba872;
+            --color-accent-light: #7bc492;
+            --color-accent-glow: rgba(91, 168, 114, 0.15);
+            --color-border: rgba(232, 230, 227, 0.08);
+            --color-border-strong: rgba(232, 230, 227, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--color-ink);
+            background: var(--color-paper);
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        ::selection {
+            background: var(--color-accent);
+            color: white;
+        }
+
+        /* Grain Overlay */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            opacity: 0.03;
+            z-index: 9999;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23noise)'/%3E%3C/svg%3E");
+        }
+
+        /* Smooth Page Load */
+        .page-wrapper {
+            opacity: 0;
+            animation: fadeInPage 1s var(--transition-smooth) forwards;
+        }
+
+        @keyframes fadeInPage {
+            to { opacity: 1; }
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: var(--space-sm) var(--space-md);
+            background: transparent;
+            transition: all 0.4s var(--transition-smooth);
+        }
+
+        .nav.scrolled {
+            background: rgba(250, 249, 247, 0.92);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        [data-theme="dark"] .nav.scrolled {
+            background: rgba(20, 20, 19, 0.92);
+        }
+
+        .nav-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--color-ink);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-logo span {
+            color: var(--color-accent);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: var(--space-md);
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--color-ink-light);
+            text-decoration: none;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+            position: relative;
+            padding: var(--space-xs) 0;
+            transition: color 0.3s var(--transition-smooth);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--color-accent);
+            transition: width 0.3s var(--transition-smooth);
+        }
+
+        .nav-links a:hover {
+            color: var(--color-ink);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-controls {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+        }
+
+        .theme-toggle {
+            width: 40px;
+            height: 40px;
+            border: 1px solid var(--color-border-strong);
+            border-radius: 50%;
+            background: transparent;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            transition: all 0.3s var(--transition-smooth);
+        }
+
+        .theme-toggle:hover {
+            background: var(--color-accent-glow);
+            border-color: var(--color-accent);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            width: 40px;
+            height: 40px;
+            border: 1px solid var(--color-border-strong);
+            border-radius: 50%;
+            background: transparent;
+            cursor: pointer;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+        }
+
+        .mobile-menu-btn span {
+            width: 16px;
+            height: 1.5px;
+            background: var(--color-ink);
+            transition: all 0.3s var(--transition-smooth);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding: var(--space-xl) var(--space-md);
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            right: -10%;
+            width: 60%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--color-accent-glow) 0%, transparent 60%);
+            opacity: 0.5;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-xl);
+            align-items: center;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-text {
+            opacity: 0;
+            transform: translateY(40px);
+            animation: heroFadeIn 1s var(--transition-smooth) 0.3s forwards;
+        }
+
+        @keyframes heroFadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-label {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-xs);
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--color-accent);
+            margin-bottom: var(--space-md);
+        }
+
+        .hero-label::before {
+            content: '';
+            width: 24px;
+            height: 1px;
+            background: var(--color-accent);
+        }
+
+        .hero-title {
+            font-family: var(--font-display);
+            font-size: clamp(3rem, 7vw, 5.5rem);
+            font-weight: 500;
+            line-height: 1.05;
+            letter-spacing: -0.03em;
+            color: var(--color-ink);
+            margin-bottom: var(--space-md);
+        }
+
+        .hero-title .accent {
+            font-style: italic;
+            color: var(--color-accent);
+        }
+
+        .hero-subtitle {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: var(--color-ink-muted);
+            margin-bottom: var(--space-sm);
+        }
+
+        .hero-affiliation {
+            font-size: 0.95rem;
+            color: var(--color-ink-muted);
+            line-height: 1.8;
+            margin-bottom: var(--space-md);
+        }
+
+        .hero-affiliation a {
+            color: var(--color-ink-light);
+            text-decoration: none;
+            border-bottom: 1px solid var(--color-border-strong);
+            transition: all 0.3s var(--transition-smooth);
+        }
+
+        .hero-affiliation a:hover {
+            color: var(--color-accent);
+            border-color: var(--color-accent);
+        }
+
+        .hero-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-sm);
+            margin-top: var(--space-md);
+        }
+
+        .hero-link {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-xs);
+            padding: 0.75rem 1.25rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            text-decoration: none;
+            border-radius: 100px;
+            transition: all 0.3s var(--transition-smooth);
+        }
+
+        .hero-link.primary {
+            background: var(--color-ink);
+            color: var(--color-paper);
+        }
+
+        .hero-link.primary:hover {
+            background: var(--color-accent);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(45, 90, 61, 0.2);
+        }
+
+        .hero-link.secondary {
+            background: transparent;
+            color: var(--color-ink);
+            border: 1px solid var(--color-border-strong);
+        }
+
+        .hero-link.secondary:hover {
+            border-color: var(--color-accent);
+            color: var(--color-accent);
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+            opacity: 0;
+            transform: translateY(40px) scale(0.95);
+            animation: heroImageIn 1s var(--transition-smooth) 0.5s forwards;
+        }
+
+        @keyframes heroImageIn {
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .hero-image-frame {
+            position: relative;
+            aspect-ratio: 4/5;
+            max-width: 480px;
+            margin-left: auto;
+        }
+
+        .hero-image-frame::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 100%;
+            height: 100%;
+            border: 1px solid var(--color-accent);
+            border-radius: 300px 300px 20px 20px;
+            opacity: 0.3;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 300px 300px 20px 20px;
+            filter: grayscale(15%);
+            transition: filter 0.5s var(--transition-smooth);
+        }
+
+        .hero-image:hover {
+            filter: grayscale(0%);
+        }
+
+        .hero-stats {
+            position: absolute;
+            bottom: -30px;
+            left: -60px;
+            background: var(--color-paper);
+            padding: var(--space-md);
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+            border: 1px solid var(--color-border);
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-md);
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--color-accent);
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: var(--color-ink-muted);
+            margin-top: var(--space-xs);
+        }
+
+        /* Section Styles */
+        .section {
+            padding: var(--space-xl) var(--space-md);
+            position: relative;
+        }
+
+        .section-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            margin-bottom: var(--space-lg);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s var(--transition-smooth);
+        }
+
+        .section-header.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-xs);
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--color-accent);
+            margin-bottom: var(--space-sm);
+        }
+
+        .section-label::before {
+            content: '';
+            width: 24px;
+            height: 1px;
+            background: var(--color-accent);
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 500;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            color: var(--color-ink);
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--color-ink-muted);
+            max-width: 600px;
+            margin-top: var(--space-sm);
+        }
+
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-lg);
+            align-items: start;
+        }
+
+        .about-text {
+            font-size: 1.05rem;
+            color: var(--color-ink-light);
+        }
+
+        .about-text p {
+            margin-bottom: var(--space-md);
+        }
+
+        .about-text a {
+            color: var(--color-accent);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s var(--transition-smooth);
+        }
+
+        .about-text a:hover {
+            border-color: var(--color-accent);
+        }
+
+        .research-interests {
+            background: var(--color-paper-warm);
+            border-radius: 24px;
+            padding: var(--space-lg);
+            border: 1px solid var(--color-border);
+        }
+
+        .research-interests h3 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: var(--space-md);
+            color: var(--color-ink);
+        }
+
+        .interest-list {
+            list-style: none;
+        }
+
+        .interest-list li {
+            padding: var(--space-sm) 0;
+            border-bottom: 1px solid var(--color-border);
+            font-size: 0.95rem;
+            color: var(--color-ink-light);
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+        }
+
+        .interest-list li:last-child {
+            border-bottom: none;
+        }
+
+        .interest-list li::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background: var(--color-accent);
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        /* Research Cards */
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-md);
+        }
+
+        .research-card {
+            background: var(--color-paper-warm);
+            border: 1px solid var(--color-border);
+            border-radius: 20px;
+            padding: var(--space-md);
+            transition: all 0.4s var(--transition-smooth);
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .research-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .research-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+            border-color: var(--color-accent);
+        }
+
+        .research-card-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--color-accent-glow);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: var(--space-sm);
+            font-size: 1.5rem;
+        }
+
+        .research-card h4 {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 500;
+            margin-bottom: var(--space-xs);
+            color: var(--color-ink);
+        }
+
+        .research-card p {
+            font-size: 0.9rem;
+            color: var(--color-ink-muted);
+            line-height: 1.6;
+        }
+
+        /* Publications Section */
+        .publications-section {
+            background: var(--color-paper-warm);
+        }
+
+        .pub-categories {
+            display: flex;
+            gap: var(--space-sm);
+            margin-bottom: var(--space-lg);
+            flex-wrap: wrap;
+        }
+
+        .pub-tab {
+            padding: 0.75rem 1.5rem;
+            border: 1px solid var(--color-border-strong);
+            border-radius: 100px;
+            background: transparent;
+            font-family: var(--font-body);
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--color-ink-light);
+            cursor: pointer;
+            transition: all 0.3s var(--transition-smooth);
+        }
+
+        .pub-tab:hover,
+        .pub-tab.active {
+            background: var(--color-ink);
+            color: var(--color-paper);
+            border-color: var(--color-ink);
+        }
+
+        .pub-content {
+            display: none;
+        }
+
+        .pub-content.active {
+            display: block;
+        }
+
+        .pub-list {
+            list-style: none;
+        }
+
+        .pub-item {
+            padding: var(--space-md) 0;
+            border-bottom: 1px solid var(--color-border);
+            transition: all 0.3s var(--transition-smooth);
+        }
+
+        .pub-item:hover {
+            padding-left: var(--space-sm);
+        }
+
+        .pub-item a {
+            text-decoration: none;
+            display: block;
+        }
+
+        .pub-title {
+            font-family: var(--font-display);
+            font-size: 1.15rem;
+            font-weight: 500;
+            color: var(--color-ink);
+            margin-bottom: var(--space-xs);
+            line-height: 1.4;
+            transition: color 0.3s var(--transition-smooth);
+        }
+
+        .pub-item:hover .pub-title {
+            color: var(--color-accent);
+        }
+
+        .pub-authors {
+            font-size: 0.875rem;
+            color: var(--color-ink-muted);
+            margin-bottom: var(--space-xs);
+        }
+
+        .pub-journal {
+            font-size: 0.8rem;
+            font-style: italic;
+            color: var(--color-accent);
+        }
+
+        .patents-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-md);
+        }
+
+        .patent-card {
+            background: var(--color-paper);
+            border: 1px solid var(--color-border);
+            border-radius: 16px;
+            padding: var(--space-md);
+        }
+
+        .patent-card h4 {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--color-ink);
+            margin-bottom: var(--space-sm);
+        }
+
+        .patent-card p {
+            font-size: 0.875rem;
+            color: var(--color-ink-muted);
+            line-height: 1.6;
+        }
+
+        /* News Section */
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-md);
+        }
+
+        .news-card {
+            background: var(--color-paper-warm);
+            border: 1px solid var(--color-border);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.4s var(--transition-smooth);
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .news-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .news-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+        }
+
+        .news-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.5s var(--transition-smooth);
+        }
+
+        .news-card:hover .news-image {
+            transform: scale(1.05);
+        }
+
+        .news-image-wrapper {
+            overflow: hidden;
+        }
+
+        .news-body {
+            padding: var(--space-md);
+        }
+
+        .news-date {
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--color-accent);
+            margin-bottom: var(--space-xs);
+        }
+
+        .news-title {
+            font-family: var(--font-display);
+            font-size: 1.15rem;
+            font-weight: 500;
+            color: var(--color-ink);
+            line-height: 1.3;
+            margin-bottom: var(--space-sm);
+        }
+
+        .news-excerpt {
+            font-size: 0.9rem;
+            color: var(--color-ink-muted);
+            line-height: 1.6;
+        }
+
+        /* Gallery Section */
+        .gallery-tabs {
+            display: flex;
+            gap: var(--space-sm);
+            margin-bottom: var(--space-lg);
+            justify-content: center;
+        }
+
+        .gallery-tab {
+            padding: 0.75rem 1.5rem;
+            border: 1px solid var(--color-border-strong);
+            border-radius: 100px;
+            background: transparent;
+            font-family: var(--font-body);
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--color-ink-light);
+            cursor: pointer;
+            transition: all 0.3s var(--transition-smooth);
+        }
+
+        .gallery-tab:hover,
+        .gallery-tab.active {
+            background: var(--color-ink);
+            color: var(--color-paper);
+            border-color: var(--color-ink);
+        }
+
+        .gallery-content {
+            display: none;
+        }
+
+        .gallery-content.active {
+            display: block;
+        }
+
+        .gallery-slider {
+            position: relative;
+            border-radius: 24px;
+            overflow: hidden;
+            background: var(--color-paper-warm);
+        }
+
+        .gallery-slides {
+            display: flex;
+            transition: transform 0.5s var(--transition-smooth);
+        }
+
+        .gallery-slide {
+            min-width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .gallery-slide img {
+            width: 100%;
+            height: auto;
+            max-height: 600px;
+            object-fit: contain;
+            background: var(--color-ink);
+        }
+
+        .gallery-caption {
+            padding: var(--space-md);
+            background: var(--color-paper-warm);
+            color: var(--color-ink);
+            border-top: 1px solid var(--color-border);
+        }
+
+        .gallery-caption h4 {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 500;
+            margin-bottom: var(--space-xs);
+            color: var(--color-ink);
+        }
+
+        .gallery-caption p {
+            font-size: 0.9rem;
+            color: var(--color-ink-muted);
+        }
+
+        .gallery-nav {
+            position: absolute;
+            top: 40%;
+            transform: translateY(-50%);
+            width: 48px;
+            height: 48px;
+            border: none;
+            background: white;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            color: var(--color-ink);
+            transition: all 0.3s var(--transition-smooth);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            z-index: 10;
+        }
+
+        .gallery-nav:hover {
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .gallery-nav.prev {
+            left: var(--space-md);
+        }
+
+        .gallery-nav.next {
+            right: var(--space-md);
+        }
+
+        .gallery-dots {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-xs);
+            padding: var(--space-md);
+        }
+
+        .gallery-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--color-border-strong);
+            cursor: pointer;
+            transition: all 0.3s var(--transition-smooth);
+        }
+
+        .gallery-dot.active {
+            background: var(--color-accent);
+            width: 24px;
+            border-radius: 4px;
+        }
+
+        /* CV Section */
+        .cv-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-md);
+        }
+
+        .cv-card {
+            background: var(--color-paper-warm);
+            border: 1px solid var(--color-border);
+            border-radius: 20px;
+            padding: var(--space-lg);
+        }
+
+        .cv-card h4 {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: var(--color-ink);
+            margin-bottom: var(--space-md);
+            padding-bottom: var(--space-sm);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .cv-item {
+            margin-bottom: var(--space-sm);
+        }
+
+        .cv-item strong {
+            color: var(--color-accent);
+            font-weight: 600;
+        }
+
+        .cv-item p {
+            font-size: 0.9rem;
+            color: var(--color-ink-muted);
+        }
+
+        .cv-download {
+            display: flex;
+            justify-content: center;
+            margin-top: var(--space-lg);
+        }
+
+        .cv-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-sm);
+            padding: 1rem 2rem;
+            background: var(--color-ink);
+            color: var(--color-paper);
+            text-decoration: none;
+            border-radius: 100px;
+            font-weight: 500;
+            transition: all 0.3s var(--transition-smooth);
+        }
+
+        .cv-btn:hover {
+            background: var(--color-accent);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(45, 90, 61, 0.2);
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: var(--color-paper-warm);
+            border-top: 1px solid var(--color-border);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-lg);
+            margin-top: var(--space-lg);
+        }
+
+        .contact-card {
+            background: var(--color-paper);
+            border: 1px solid var(--color-border);
+            border-radius: 20px;
+            padding: var(--space-md);
+        }
+
+        .contact-card h4 {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 500;
+            margin-bottom: var(--space-sm);
+            color: var(--color-accent);
+        }
+
+        .contact-card p,
+        .contact-card a {
+            font-size: 0.95rem;
+            color: var(--color-ink-light);
+            line-height: 1.8;
+        }
+
+        .contact-card a {
+            text-decoration: none;
+            transition: color 0.3s var(--transition-smooth);
+        }
+
+        .contact-card a:hover {
+            color: var(--color-accent);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--color-ink);
+            color: rgba(255, 255, 255, 0.6);
+            padding: var(--space-md);
+            text-align: center;
+            font-size: 0.875rem;
+        }
+
+        .footer a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            color: white;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 1024px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: var(--space-lg);
+            }
+
+            .hero-image-frame {
+                max-width: 400px;
+                margin: 0 auto;
+            }
+
+            .hero-stats {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .research-grid,
+            .news-grid,
+            .cv-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .patents-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: flex;
+            }
+
+            .hero {
+                padding: calc(var(--space-xl) + var(--space-md)) var(--space-sm) var(--space-lg);
+            }
+
+            .hero-stats {
+                position: relative;
+                bottom: auto;
+                left: auto;
+                transform: none;
+                margin-top: var(--space-md);
+            }
+
+            .section {
+                padding: var(--space-lg) var(--space-sm);
+            }
+
+            .research-grid,
+            .news-grid,
+            .cv-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-slide img {
+                max-height: 400px;
+            }
+
+            .pub-categories,
+            .gallery-tabs {
+                overflow-x: auto;
+                flex-wrap: nowrap;
+                padding-bottom: var(--space-sm);
+            }
+
+            .pub-tab,
+            .gallery-tab {
+                white-space: nowrap;
+            }
+        }
+
+        /* Animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-wrapper">
+        <!-- Navigation -->
+        <nav class="nav" id="nav">
+            <div class="nav-inner">
+                <a href="#" class="nav-logo">Bishal <span>Tamang</span></a>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#research">Research</a></li>
+                    <li><a href="#publications">Publications</a></li>
+                    <li><a href="#news">News</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#cv">CV</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="nav-controls">
+                    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+                        <span id="theme-icon">☀️</span>
+                    </button>
+                    <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-bg"></div>
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="hero-label">Research Scientist</div>
+                    <h1 class="hero-title">Bishal G. <span class="accent">Tamang</span>, Ph.D.</h1>
+                    <p class="hero-subtitle">Crop Physiologist & Photosynthesis Researcher</p>
+                    <p class="hero-affiliation">
+                        <a href="https://publish.illinois.edu/ainsworthlab/lisa-ainsworth/" target="_blank">Ainsworth Lab</a> · 
+                        <a href="https://www.igb.illinois.edu/" target="_blank">Institute for Genomic Biology</a><br>
+                        University of Illinois Urbana-Champaign
+                    </p>
+                    <p style="color: var(--color-ink-muted); font-size: 0.95rem; margin-top: var(--space-sm);">
+                        Advancing agricultural sciences through innovative research in crop physiology and photosynthesis optimization for global food security.
+                    </p>
+                    <div class="hero-links">
+                        <a href="CV_Bishal_Tamang.pdf" download class="hero-link primary">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                <polyline points="7 10 12 15 17 10"/>
+                                <line x1="12" y1="15" x2="12" y2="3"/>
+                            </svg>
+                            Download CV
+                        </a>
+                        <a href="https://scholar.google.com/citations?user=NPp2jjwAAAAJ&hl=en&oi=ao" target="_blank" class="hero-link secondary">Google Scholar</a>
+                        <a href="https://orcid.org/0000-0003-4991-6354" target="_blank" class="hero-link secondary">ORCID</a>
+                        <a href="https://github.com/bgtamang" target="_blank" class="hero-link secondary">GitHub</a>
+                    </div>
+                </div>
+                <div class="hero-image-wrapper">
+                    <div class="hero-image-frame">
+                        <img src="headshot.png" alt="Bishal G. Tamang, Ph.D." class="hero-image">
+                    </div>
+                    <div class="hero-stats floating">
+                        <div class="stat">
+                            <div class="stat-value" data-target="18">0</div>
+                            <div class="stat-label">Publications</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value" data-target="2">0</div>
+                            <div class="stat-label">Patents</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value" data-target="5">0</div>
+                            <div class="stat-label">Mentees</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section">
+            <div class="section-inner">
+                <div class="section-header">
+                    <div class="section-label">About Me</div>
+                    <h2 class="section-title">Pioneering Crop Science<br>for a Sustainable Future</h2>
+                </div>
+                <div class="about-grid">
+                    <div class="about-text">
+                        <p>With a robust foundation in crop sciences, my role as a Research Scientist at the University of Illinois Urbana-Champaign centers on advancements in agricultural sciences. Our team's work on the <a href="https://ripe.illinois.edu/" target="_blank">RIPE project</a> contributes significantly to global change and photosynthesis research, pushing the boundaries of crop performance optimization.</p>
+                        <p>Leveraging expertise in plant physiology and molecular biology, I am committed to developing tools that integrate high throughput crop physiology and biotechnology. These efforts are crucial in addressing the pressing challenges of food security and sustainability, reflecting my dedication to scientific excellence and passion for creating positive impact on global agriculture.</p>
+                    </div>
+                    <div class="research-interests">
+                        <h3>Research Interests</h3>
+                        <ul class="interest-list">
+                            <li>Photosynthesis optimization in crop plants</li>
+                            <li>High-throughput phenotyping technologies</li>
+                            <li>Plant stress physiology and adaptation</li>
+                            <li>Sustainable agriculture and food security</li>
+                            <li>Integration of biotechnology in crop improvement</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Research Section -->
+        <section id="research" class="section" style="background: var(--color-paper-warm);">
+            <div class="section-inner">
+                <div class="section-header">
+                    <div class="section-label">Research Focus</div>
+                    <h2 class="section-title">Transforming Agriculture<br>Through Innovation</h2>
+                    <p class="section-subtitle">My research focuses on understanding and improving crop productivity through advanced physiological and molecular approaches.</p>
+                </div>
+                <div class="research-grid">
+                    <div class="research-card">
+                        <div class="research-card-icon">🌱</div>
+                        <h4>Canopy Architecture & Photosynthesis</h4>
+                        <p>Developed 200+ soybean backcrossed lines and 20 transgenic lines with altered canopy architecture using CRISPR gene editing to optimize light interception and photosynthetic efficiency.</p>
+                    </div>
+                    <div class="research-card">
+                        <div class="research-card-icon">🛰️</div>
+                        <h4>High-Throughput Phenotyping</h4>
+                        <p>Implementing cutting-edge remote (UAV and Satellite) and proximal sensing technologies (LiDAR, hyperspectral) for rapid assessment of plant traits and stress responses.</p>
+                    </div>
+                    <div class="research-card">
+                        <div class="research-card-icon">💧</div>
+                        <h4>Plant Water Relations</h4>
+                        <p>Characterizing transpiration dynamics, including nighttime water use and circadian control, to identify traits for improved water use efficiency in crops.</p>
+                    </div>
+                    <div class="research-card">
+                        <div class="research-card-icon">🧬</div>
+                        <h4>Stress Physiology</h4>
+                        <p>Investigating transcriptomic and hormonal responses to flooding and drought stress in soybean, identifying key genes and pathways for stress tolerance.</p>
+                    </div>
+                    <div class="research-card">
+                        <div class="research-card-icon">🔬</div>
+                        <h4>Genetic Resource Development</h4>
+                        <p>Creating mapping populations and near-isogenic lines for genetic dissection of complex traits including leaf shape, canopy architecture, and photosynthetic efficiency.</p>
+                    </div>
+                    <div class="research-card">
+                        <div class="research-card-icon">📊</div>
+                        <h4>Field-Based Phenomics</h4>
+                        <p>Establishing field-based phenotyping platforms integrating multiple sensors for real-time monitoring of crop performance under varying environmental conditions.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Publications Section -->
+        <section id="publications" class="section publications-section">
+            <div class="section-inner">
+                <div class="section-header">
+                    <div class="section-label">Publications & Patents</div>
+                    <h2 class="section-title">Scientific Contributions</h2>
+                    <p class="section-subtitle">For a complete list, visit my <a href="https://scholar.google.com/citations?user=NPp2jjwAAAAJ&hl=en&oi=ao" target="_blank" style="color: var(--color-accent);">Google Scholar profile</a>.</p>
+                </div>
+                
+                <div class="pub-categories">
+                    <button class="pub-tab active" onclick="showPubCategory('patents')">Patents</button>
+                    <button class="pub-tab" onclick="showPubCategory('selected')">Selected Publications</button>
+                    <button class="pub-tab" onclick="showPubCategory('preprints')">Preprints</button>
+                </div>
+
+                <div id="patents" class="pub-content active">
+                    <div class="patents-grid">
+                        <div class="patent-card">
+                            <h4>Breeding soybean for reduced leaf area index</h4>
+                            <p><strong>Inventors:</strong> Tamang BG, BW Diers, EA Ainsworth<br>
+                            <strong>Application No.:</strong> U.S. Provisional 63/781,061<br>
+                            <strong>Filed:</strong> March 31, 2025</p>
+                        </div>
+                        <div class="patent-card">
+                            <h4>Soybean with stacked genes to improve photosynthesis</h4>
+                            <p><strong>Inventors:</strong> Tamang BG, BW Diers, EA Ainsworth<br>
+                            <strong>Application No.:</strong> U.S. Provisional 63/781,059<br>
+                            <strong>Filed:</strong> March 31, 2025</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="selected" class="pub-content">
+                    <ul class="pub-list">
+                        <li class="pub-item">
+                            <a href="https://doi.org/10.1093/plphys/kiaf663" target="_blank">
+                                <div class="pub-title">Bigger is not always better: optimizing leaf area index with narrow leaf shape in soybean</div>
+                                <div class="pub-authors">Tamang BG, Bernard G, Bernacchi CJ, Diers BW, Ainsworth EA</div>
+                                <div class="pub-journal">Plant Physiology, 2025</div>
+                            </a>
+                        </li>
+                        <li class="pub-item">
+                            <a href="https://doi.org/10.1111/jac.12537" target="_blank">
+                                <div class="pub-title">Association between xylem vasculature size and freezing survival in winter barley</div>
+                                <div class="pub-authors">Tamang BG, JR Lopez, E McCoy, A Hanning, A Sallam, BJ Steffenson, GJ Muehlbauer, KP Smith, W Sadok</div>
+                                <div class="pub-journal">Journal of Agronomy and Crop Science, 2021</div>
+                            </a>
+                        </li>
+                        <li class="pub-item">
+                            <a href="https://doi.org/10.1111/tpj.15276" target="_blank">
+                                <div class="pub-title">Overlapping and stress-specific transcriptomic and hormonal responses to flooding and drought in soybean</div>
+                                <div class="pub-authors">Tamang BG, S Li, D Rajasundaram, S Lamichhane, T Fukao</div>
+                                <div class="pub-journal">The Plant Journal, 2021</div>
+                            </a>
+                        </li>
+                        <li class="pub-item">
+                            <a href="https://doi.org/10.1111/pce.13808" target="_blank">
+                                <div class="pub-title">Sheathing the blade: Significant contribution of sheaths to daytime and nighttime gas exchange in a grass crop</div>
+                                <div class="pub-authors">Sadok W, JR Lopez, Y Zhang, BG Tamang, GL Muehlbauer</div>
+                                <div class="pub-journal">Plant, Cell and Environment, 2020</div>
+                            </a>
+                        </li>
+                        <li class="pub-item">
+                            <a href="https://link.springer.com/article/10.1007/s00425-019-03151-0" target="_blank">
+                                <div class="pub-title">Variability in temperature-independent transpiration responses to evaporative demand correlate with nighttime water use</div>
+                                <div class="pub-authors">Tamang BG, R Schoppach, D Monnens, BJ Steffenson, JA Anderson, W Sadok</div>
+                                <div class="pub-journal">Planta, 2019</div>
+                            </a>
+                        </li>
+                        <li class="pub-item">
+                            <a href="https://www.sciencedirect.com/science/article/pii/S0098847217303040" target="_blank">
+                                <div class="pub-title">Nightly business: Links between daytime canopy conductance, nocturnal transpiration and its circadian control</div>
+                                <div class="pub-authors">Tamang BG, Sadok W</div>
+                                <div class="pub-journal">Environmental and Experimental Botany, 2018</div>
+                            </a>
+                        </li>
+                        <li class="pub-item">
+                            <a href="https://doi.org/10.3390/ijms161226226" target="_blank">
+                                <div class="pub-title">Plant Adaptation to Multiple Stresses during Submergence and Following Desubmergence</div>
+                                <div class="pub-authors">Tamang BG, Fukao T</div>
+                                <div class="pub-journal">International Journal of Molecular Sciences, 2015</div>
+                            </a>
+                        </li>
+                        <li class="pub-item">
+                            <a href="https://doi.org/10.1111/pce.12277" target="_blank">
+                                <div class="pub-title">Physiological and transcriptomic characterization of submergence and reoxygenation responses in soybean seedlings</div>
+                                <div class="pub-authors">Tamang BG, Magliozzi JO, Maroof MAS, Fukao T</div>
+                                <div class="pub-journal">Plant, Cell and Environment, 2014</div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div id="preprints" class="pub-content">
+                    <ul class="pub-list">
+                        <li class="pub-item">
+                            <a href="#" target="_blank">
+                                <div class="pub-title">Registration of four soybean germplasms in a common genetic background with contrasting leaf shapes</div>
+                                <div class="pub-authors">Tamang BG, BW Diers, EA Ainsworth</div>
+                                <div class="pub-journal">Journal of Plant Registrations, 2025</div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- News Section -->
+        <section id="news" class="section">
+            <div class="section-inner">
+                <div class="section-header">
+                    <div class="section-label">Latest Updates</div>
+                    <h2 class="section-title">News & Highlights</h2>
+                </div>
+                <div class="news-grid">
+                    <div class="news-card">
+                        <div class="news-image-wrapper">
+                            <img src="images/news/tamang_2025_pp.jpg" alt="Plant Physiology 2025 publication" class="news-image">
+                        </div>
+                        <div class="news-body">
+                            <div class="news-date">December 2025</div>
+                            <h3 class="news-title">New Publication in Plant Physiology</h3>
+                            <p class="news-excerpt">Our paper "Bigger is not always better: optimizing leaf area index with narrow leaf shape in soybean" is now published in Plant Physiology!</p>
+                        </div>
+                    </div>
+                    <div class="news-card">
+                        <div class="news-image-wrapper">
+                            <img src="images/news/fao_1.jpg" alt="FAO Conference" class="news-image">
+                        </div>
+                        <div class="news-body">
+                            <div class="news-date">June 2025</div>
+                            <h3 class="news-title">FAO Global Agrifood Biotechnologies Conference</h3>
+                            <p class="news-excerpt">Presented our research on soybean canopy architecture optimization at the prestigious FAO conference in Rome, Italy.</p>
+                        </div>
+                    </div>
+                    <div class="news-card">
+                        <div class="news-image-wrapper">
+                            <img src="images/news/AGBT_2025_1.jpg" alt="AGBT 2025" class="news-image">
+                        </div>
+                        <div class="news-body">
+                            <div class="news-date">February 2025</div>
+                            <h3 class="news-title">Speaker at AGBT Agricultural Meeting</h3>
+                            <p class="news-excerpt">Speaker at the Advances in Genome Biology and Technology (AGBT) Agricultural Meeting in Orlando, FL.</p>
+                        </div>
+                    </div>
+                    <div class="news-card">
+                        <div class="news-image-wrapper">
+                            <img src="images/news/Monnens_2024.jpg" alt="Functional Plant Biology" class="news-image">
+                        </div>
+                        <div class="news-body">
+                            <div class="news-date">November 2024</div>
+                            <h3 class="news-title">New Publication in Functional Plant Biology</h3>
+                            <p class="news-excerpt">Our paper on high-throughput phenotyping of soybean transpiration response curves is now published.</p>
+                        </div>
+                    </div>
+                    <div class="news-card">
+                        <div class="news-body">
+                            <div class="news-date">October 2024</div>
+                            <h3 class="news-title">RIPE Project Ambassador</h3>
+                            <p class="news-excerpt">Honored to be selected as a RIPE project ambassador for 2025-2026, promoting our mission to improve global food security.</p>
+                        </div>
+                    </div>
+                    <div class="news-card">
+                        <div class="news-image-wrapper">
+                            <img src="images/news/SBW_2024.jpeg" alt="Soybean Breeders Workshop" class="news-image">
+                        </div>
+                        <div class="news-body">
+                            <div class="news-date">August 2024</div>
+                            <h3 class="news-title">Soybean Breeders Workshop Presentation</h3>
+                            <p class="news-excerpt">Presented findings on CRISPR-edited soybean lines with altered canopy architecture at the annual workshop in St. Louis.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="section" style="background: var(--color-paper-warm);">
+            <div class="section-inner">
+                <div class="section-header" style="text-align: center;">
+                    <div class="section-label" style="justify-content: center;">Visual Insights</div>
+                    <h2 class="section-title">Research Gallery</h2>
+                </div>
+                
+                <div class="gallery-tabs">
+                    <button class="gallery-tab active" onclick="showGallery('field')">Field Research</button>
+                    <button class="gallery-tab" onclick="showGallery('lab')">Laboratory</button>
+                    <button class="gallery-tab" onclick="showGallery('phenotyping')">Phenotyping</button>
+                    <button class="gallery-tab" onclick="showGallery('team')">Team</button>
+                </div>
+
+                <div id="field-gallery" class="gallery-content active">
+                    <div class="gallery-slider">
+                        <div class="gallery-slides" id="field-slides">
+                            <div class="gallery-slide">
+                                <img src="images/gallery/field/field_1.jpg" alt="Field Research">
+                                <div class="gallery-caption">
+                                    <h4>Soybean Field Trials</h4>
+                                    <p>Mechanical planting of experimental plots</p>
+                                </div>
+                            </div>
+                            <div class="gallery-slide">
+                                <img src="images/gallery/field/field_2.jpg" alt="Leaf Shape">
+                                <div class="gallery-caption">
+                                    <h4>Leaf Shape Diversity</h4>
+                                    <p>Soybean leaf trait diversity in field</p>
+                                </div>
+                            </div>
+                            <div class="gallery-slide">
+                                <img src="images/gallery/field/field_3.jpg" alt="Field Research">
+                                <div class="gallery-caption">
+                                    <h4>Experimental Plots</h4>
+                                    <p>Multi-environment trial setup</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="gallery-nav prev" onclick="changeGallerySlide('field', -1)">‹</button>
+                        <button class="gallery-nav next" onclick="changeGallerySlide('field', 1)">›</button>
+                        <div class="gallery-dots" id="field-dots"></div>
+                    </div>
+                </div>
+
+                <div id="lab-gallery" class="gallery-content">
+                    <div class="gallery-slider">
+                        <div class="gallery-slides" id="lab-slides">
+                            <div class="gallery-slide">
+                                <img src="images/gallery/lab/lab_1.jpg" alt="Laboratory Research">
+                                <div class="gallery-caption">
+                                    <h4>Molecular Analysis</h4>
+                                    <p>Advanced laboratory techniques</p>
+                                </div>
+                            </div>
+                            <div class="gallery-slide">
+                                <img src="images/gallery/lab/lab_2.jpg" alt="Laboratory">
+                                <div class="gallery-caption">
+                                    <h4>Sample Processing</h4>
+                                    <p>High-throughput sample analysis</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="gallery-nav prev" onclick="changeGallerySlide('lab', -1)">‹</button>
+                        <button class="gallery-nav next" onclick="changeGallerySlide('lab', 1)">›</button>
+                        <div class="gallery-dots" id="lab-dots"></div>
+                    </div>
+                </div>
+
+                <div id="phenotyping-gallery" class="gallery-content">
+                    <div class="gallery-slider">
+                        <div class="gallery-slides" id="phenotyping-slides">
+                            <div class="gallery-slide">
+                                <img src="images/gallery/phenotyping/phenotyping_1.jpg" alt="Phenotyping">
+                                <div class="gallery-caption">
+                                    <h4>UAV-Based Imaging</h4>
+                                    <p>Multispectral data collection</p>
+                                </div>
+                            </div>
+                            <div class="gallery-slide">
+                                <img src="images/gallery/phenotyping/phenotyping_8.gif" alt="Phenotyping">
+                                <div class="gallery-caption">
+                                    <h4>UAV Multispectral Imaging</h4>
+                                    <p>Soybean field trials imagery</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="gallery-nav prev" onclick="changeGallerySlide('phenotyping', -1)">‹</button>
+                        <button class="gallery-nav next" onclick="changeGallerySlide('phenotyping', 1)">›</button>
+                        <div class="gallery-dots" id="phenotyping-dots"></div>
+                    </div>
+                </div>
+
+                <div id="team-gallery" class="gallery-content">
+                    <div class="gallery-slider">
+                        <div class="gallery-slides" id="team-slides">
+                            <div class="gallery-slide">
+                                <img src="images/gallery/team/team_1.jpg" alt="Team">
+                                <div class="gallery-caption">
+                                    <h4>Ainsworth Lab 2024</h4>
+                                    <p>Current and past members</p>
+                                </div>
+                            </div>
+                            <div class="gallery-slide">
+                                <img src="images/gallery/team/team_2.jpg" alt="Field Crew">
+                                <div class="gallery-caption">
+                                    <h4>Field Crew</h4>
+                                    <p>Planting soybean field trials</p>
+                                </div>
+                            </div>
+                            <div class="gallery-slide">
+                                <img src="images/gallery/team/team_3.jpg" alt="Crossing Team">
+                                <div class="gallery-caption">
+                                    <h4>Crossing Team</h4>
+                                    <p>Puerto Rico crossing team</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="gallery-nav prev" onclick="changeGallerySlide('team', -1)">‹</button>
+                        <button class="gallery-nav next" onclick="changeGallerySlide('team', 1)">›</button>
+                        <div class="gallery-dots" id="team-dots"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CV Section -->
+        <section id="cv" class="section">
+            <div class="section-inner">
+                <div class="section-header">
+                    <div class="section-label">Curriculum Vitae</div>
+                    <h2 class="section-title">Academic Background</h2>
+                </div>
+                <div class="cv-grid">
+                    <div class="cv-card">
+                        <h4>Education</h4>
+                        <div class="cv-item">
+                            <strong>Ph.D. (2016)</strong>
+                            <p>Agronomy and Crop Sciences<br>Virginia Tech</p>
+                        </div>
+                        <div class="cv-item">
+                            <strong>M.Sc. (2012)</strong>
+                            <p>Plant Breeding and Genetics<br>Tribhuvan University</p>
+                        </div>
+                        <div class="cv-item">
+                            <strong>B.Sc. (2009)</strong>
+                            <p>Plant Breeding and Genetics<br>Tribhuvan University</p>
+                        </div>
+                    </div>
+                    <div class="cv-card">
+                        <h4>Research Positions</h4>
+                        <div class="cv-item">
+                            <strong>2020–Present</strong>
+                            <p>Research Scientist<br>University of Illinois</p>
+                        </div>
+                        <div class="cv-item">
+                            <strong>2016–2020</strong>
+                            <p>Postdoctoral Fellow<br>University of Minnesota</p>
+                        </div>
+                        <div class="cv-item">
+                            <strong>2013–2016</strong>
+                            <p>Graduate Research Assistant<br>Virginia Tech</p>
+                        </div>
+                    </div>
+                    <div class="cv-card">
+                        <h4>Selected Awards</h4>
+                        <div class="cv-item">
+                            <strong>2025–2026</strong>
+                            <p>RIPE Project Ambassador</p>
+                        </div>
+                        <div class="cv-item">
+                            <strong>2019</strong>
+                            <p>ASPB Plantae's Network Champion</p>
+                        </div>
+                        <div class="cv-item">
+                            <strong>2016</strong>
+                            <p>Charles I. Rich Fellowship<br>Virginia Tech</p>
+                        </div>
+                        <div class="cv-item">
+                            <strong>2015</strong>
+                            <p>Phyllis G. & Reginald H. Nelson IV<br>Tuition Scholarship</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="cv-download">
+                    <a href="CV_Bishal_Tamang.pdf" download class="cv-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="7 10 12 15 17 10"/>
+                            <line x1="12" y1="15" x2="12" y2="3"/>
+                        </svg>
+                        Download Full CV (PDF)
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section contact-section" style="background: var(--color-paper-warm);">
+            <div class="section-inner">
+                <div class="section-header">
+                    <div class="section-label">Get in Touch</div>
+                    <h2 class="section-title">Contact</h2>
+                </div>
+                <div class="contact-grid">
+                    <div class="contact-card">
+                        <h4>Email</h4>
+                        <p>
+                            <a href="mailto:bgtamang@illinois.edu">bgtamang@illinois.edu</a><br>
+                            <a href="mailto:bgtamang@gmail.com">bgtamang@gmail.com</a>
+                        </p>
+                    </div>
+                    <div class="contact-card">
+                        <h4>Office</h4>
+                        <p>Institute for Genomic Biology<br>
+                        University of Illinois<br>
+                        Urbana-Champaign, IL 61801</p>
+                    </div>
+                    <div class="contact-card">
+                        <h4>Connect</h4>
+                        <p>
+                            <a href="https://scholar.google.com/citations?user=NPp2jjwAAAAJ&hl=en&oi=ao" target="_blank">Google Scholar</a><br>
+                            <a href="https://orcid.org/0000-0003-4991-6354" target="_blank">ORCID</a><br>
+                            <a href="https://github.com/bgtamang" target="_blank">GitHub</a><br>
+                            <a href="https://www.linkedin.com/in/bishal-tamang-2b45bb37/" target="_blank">LinkedIn</a><br>
+                            <a href="https://x.com/bgtamang" target="_blank">Twitter/X</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>© 2025 Bishal G. Tamang. All rights reserved. · <a href="https://illinois.edu" target="_blank">University of Illinois</a></p>
+        </footer>
+    </div>
+
+    <script>
+        // Theme Toggle
+        function toggleTheme() {
+            const html = document.documentElement;
+            const icon = document.getElementById('theme-icon');
+            if (html.getAttribute('data-theme') === 'dark') {
+                html.removeAttribute('data-theme');
+                icon.textContent = '☀️';
+                localStorage.setItem('theme', 'light');
+            } else {
+                html.setAttribute('data-theme', 'dark');
+                icon.textContent = '🌙';
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+
+        // Load saved theme
+        if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            document.getElementById('theme-icon').textContent = '🌙';
+        }
+
+        // Navigation scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Animated counters
+        function animateCounters() {
+            document.querySelectorAll('.stat-value[data-target]').forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-target'));
+                const duration = 2000;
+                const step = target / (duration / 16);
+                let current = 0;
+                
+                const updateCounter = () => {
+                    current += step;
+                    if (current < target) {
+                        counter.textContent = Math.floor(current);
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        counter.textContent = target + '+';
+                    }
+                };
+                updateCounter();
+            });
+        }
+
+        // Intersection Observer for animations
+        const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.section-header, .research-card, .news-card').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Animate counters when hero is visible
+        const heroObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    setTimeout(animateCounters, 500);
+                    heroObserver.disconnect();
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        heroObserver.observe(document.querySelector('.hero'));
+
+        // Publication tabs
+        function showPubCategory(category) {
+            document.querySelectorAll('.pub-content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.pub-tab').forEach(el => el.classList.remove('active'));
+            document.getElementById(category).classList.add('active');
+            event.target.classList.add('active');
+        }
+
+        // Gallery functionality
+        const galleryState = { field: 0, lab: 0, phenotyping: 0, team: 0 };
+
+        function showGallery(category) {
+            document.querySelectorAll('.gallery-content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.gallery-tab').forEach(el => el.classList.remove('active'));
+            document.getElementById(category + '-gallery').classList.add('active');
+            event.target.classList.add('active');
+            initGalleryDots(category);
+        }
+
+        function changeGallerySlide(category, direction) {
+            const slides = document.getElementById(category + '-slides');
+            const slideCount = slides.children.length;
+            galleryState[category] = (galleryState[category] + direction + slideCount) % slideCount;
+            slides.style.transform = `translateX(-${galleryState[category] * 100}%)`;
+            updateGalleryDots(category);
+        }
+
+        function initGalleryDots(category) {
+            const dotsContainer = document.getElementById(category + '-dots');
+            const slideCount = document.getElementById(category + '-slides').children.length;
+            dotsContainer.innerHTML = '';
+            for (let i = 0; i < slideCount; i++) {
+                const dot = document.createElement('div');
+                dot.className = 'gallery-dot' + (i === galleryState[category] ? ' active' : '');
+                dot.onclick = () => goToGallerySlide(category, i);
+                dotsContainer.appendChild(dot);
+            }
+        }
+
+        function goToGallerySlide(category, index) {
+            galleryState[category] = index;
+            document.getElementById(category + '-slides').style.transform = `translateX(-${index * 100}%)`;
+            updateGalleryDots(category);
+        }
+
+        function updateGalleryDots(category) {
+            const dots = document.getElementById(category + '-dots').children;
+            Array.from(dots).forEach((dot, i) => {
+                dot.classList.toggle('active', i === galleryState[category]);
+            });
+        }
+
+        // Initialize gallery dots
+        initGalleryDots('field');
+
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+            if (navLinks.style.display === 'flex') {
+                navLinks.style.position = 'absolute';
+                navLinks.style.top = '70px';
+                navLinks.style.left = '0';
+                navLinks.style.right = '0';
+                navLinks.style.flexDirection = 'column';
+                navLinks.style.background = 'var(--color-paper)';
+                navLinks.style.padding = '1rem 2rem';
+                navLinks.style.borderBottom = '1px solid var(--color-border)';
+                navLinks.style.gap = '1rem';
+            }
+        }
+
+        // Staggered animation for cards
+        document.querySelectorAll('.research-card, .news-card').forEach((card, i) => {
+            card.style.transitionDelay = `${i * 0.1}s`;
+        });
+    </script>
+</body>
+</html>

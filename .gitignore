@@ -1,0 +1,15 @@
+# Old versions (now tracked by Git history)
+index-V*.html
+
+# Installers
+*.exe
+
+# Word doc version of CV (PDF is the published one)
+*.docx
+
+# Old headshot
+headshot-old.jpg
+
+# OS files
+Thumbs.db
+.DS_Store
