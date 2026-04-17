@@ -13,7 +13,7 @@
     <!-- Open Graph -->
     <meta property="og:title" content="Bishal G. Tamang, Ph.D. — Molecular Crop Physiologist">
     <meta property="og:description" content="Molecular Crop Physiologist at University of Illinois, integrating genetics, remote sensing, and machine learning to improve soybean canopy architecture.">
-    <meta property="og:image" content="https://www.shootbiologist.com/headshot.png">
+    <meta property="og:image" content="https://www.shootbiologist.com/headshot-optimized.jpg">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.shootbiologist.com">
 
@@ -21,7 +21,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Bishal G. Tamang, Ph.D. — Molecular Crop Physiologist">
     <meta name="twitter:description" content="Molecular Crop Physiologist at University of Illinois, integrating genetics, remote sensing, and machine learning to improve soybean canopy architecture.">
-    <meta name="twitter:image" content="https://www.shootbiologist.com/headshot.png">
+    <meta name="twitter:image" content="https://www.shootbiologist.com/headshot-optimized.jpg">
     <meta name="twitter:site" content="@bgtamang">
 
     <!-- Canonical URL -->
@@ -42,7 +42,7 @@
             "name": "University of Illinois Urbana-Champaign"
         },
         "url": "https://www.shootbiologist.com",
-        "image": "https://www.shootbiologist.com/headshot.png",
+        "image": "https://www.shootbiologist.com/headshot-optimized.jpg",
         "sameAs": [
             "https://scholar.google.com/citations?user=NPp2jjwAAAAJ",
             "https://orcid.org/0000-0003-4991-6354",
@@ -577,6 +577,52 @@
             line-height: 1.6;
         }
 
+        .research-card-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.375rem;
+            margin-top: var(--space-sm);
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            color: var(--color-accent);
+            text-decoration: none;
+            transition: gap 0.3s var(--transition-smooth), color 0.3s var(--transition-smooth);
+        }
+
+        .research-card-link:hover {
+            gap: 0.625rem;
+            color: var(--color-accent-light);
+        }
+
+        .research-card-link .arrow {
+            transition: transform 0.3s var(--transition-smooth);
+        }
+
+        .research-card-link:hover .arrow {
+            transform: translateX(2px);
+        }
+
+        .research-card-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: var(--space-sm);
+            font-size: 0.75rem;
+            font-style: italic;
+            color: var(--color-ink-muted);
+            letter-spacing: 0.02em;
+        }
+
+        .research-card-status::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--color-gold);
+            opacity: 0.7;
+        }
+
         /* Publications Section */
         .publications-section {
             background: var(--color-paper-warm);
@@ -1058,7 +1104,10 @@
                 </div>
                 <div class="hero-image-wrapper">
                     <div class="hero-image-frame">
-                        <img src="headshot.png" alt="Bishal G. Tamang, Ph.D." class="hero-image">
+                        <picture>
+                            <source srcset="headshot.webp" type="image/webp">
+                            <img src="headshot-optimized.jpg" alt="Bishal G. Tamang, Ph.D." class="hero-image" width="720" height="852" fetchpriority="high" decoding="async">
+                        </picture>
                     </div>
                 </div>
             </div>
@@ -1104,31 +1153,37 @@
                         <div class="research-card-icon"></div>
                         <h4>Canopy Architecture & the <em>ln</em> Locus</h4>
                         <p>Developed 200+ BC3 near-isogenic soybean lines and CRISPR-edited GmJAG1 knockouts to dissect how narrow leaf shape reduces leaf area index and improves light distribution through the canopy. Two U.S. provisional patents filed.</p>
+                        <a href="https://doi.org/10.1093/plphys/kiaf663" target="_blank" rel="noopener" class="research-card-link">Read in Plant Physiology <span class="arrow">→</span></a>
                     </div>
                     <div class="research-card">
                         <div class="research-card-icon"></div>
                         <h4>Remote Sensing & Machine Learning</h4>
                         <p>Using multispectral UAV and satellite (Sentinel-2, Planet) imagery with XGBoost, random forest, and SVM models to predict peak LAI and yield across multi-environment soybean trials with hundreds of genotypes.</p>
+                        <span class="research-card-status">Manuscript in preparation</span>
                     </div>
                     <div class="research-card">
                         <div class="research-card-icon"></div>
                         <h4>QTL Mapping with Predicted Traits</h4>
                         <p>Applying mixed-model GWAS to ML-predicted BLUPs from remote sensing data to identify genetic loci for canopy traits. Identified 70 significant SNPs (29 independent signals after LD pruning) replicated across field locations.</p>
+                        <span class="research-card-status">Manuscript in preparation</span>
                     </div>
                     <div class="research-card">
                         <div class="research-card-icon"></div>
                         <h4>Phenomic Selection</h4>
                         <p>Integrating spectral reflectance data into genomic prediction frameworks. Satellite-derived phenomic selection achieves prediction accuracies comparable to UAV platforms, enabling scalable breeding applications.</p>
+                        <span class="research-card-status">Manuscript in preparation</span>
                     </div>
                     <div class="research-card">
                         <div class="research-card-icon"></div>
                         <h4>Transcriptomics & Gene Function</h4>
                         <p>RNA-seq and single-cell transcriptomic analysis of GmJAG1, the narrow leaf gene. JAG1 acts as a transcriptional repressor of cell cycle regulators including D-type cyclins and histone deacetylases in leaf primordia.</p>
+                        <a href="https://doi.org/10.64898/2026.04.08.717315" target="_blank" rel="noopener" class="research-card-link">Read preprint on bioRxiv <span class="arrow">→</span></a>
                     </div>
                     <div class="research-card">
                         <div class="research-card-icon"></div>
                         <h4>Stress Physiology & Transpiration</h4>
                         <p>Characterized overlapping and distinct transcriptomic and hormonal responses to flooding and drought in soybean. Earlier work on nocturnal transpiration dynamics and circadian control of water use in cereal crops.</p>
+                        <a href="https://doi.org/10.1111/tpj.15276" target="_blank" rel="noopener" class="research-card-link">Read in The Plant Journal <span class="arrow">→</span></a>
                     </div>
                 </div>
             </div>
@@ -1237,9 +1292,11 @@
                 <div id="preprints" class="pub-content" role="tabpanel">
                     <ul class="pub-list">
                         <li class="pub-item">
-                            <div>
-                                <div class="pub-title" style="color: var(--color-ink-muted); font-style: italic;">Coming soon</div>
-                            </div>
+                            <a href="https://doi.org/10.64898/2026.04.08.717315" target="_blank" rel="noopener">
+                                <div class="pub-title">Natural leaf shape variation reveals diverse transcriptional targets of <em>GmJAG1</em> during soybean leaf development</div>
+                                <div class="pub-authors">Tamang BG, Kramer C, Ainsworth EA</div>
+                                <div class="pub-journal">bioRxiv, April 2026 · doi.org/10.64898/2026.04.08.717315</div>
+                            </a>
                         </li>
                     </ul>
                 </div>
