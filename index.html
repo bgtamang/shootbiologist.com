@@ -787,6 +787,117 @@
             line-height: 1.6;
         }
 
+        .news-card {
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .news-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+        }
+
+        .news-card:focus-visible {
+            outline: 2px solid var(--color-accent);
+            outline-offset: 2px;
+        }
+
+        /* News Detail Modal */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.75);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.2s ease, visibility 0.2s ease;
+        }
+
+        .modal-overlay.is-open {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            background: var(--color-paper);
+            border-radius: 16px;
+            max-width: 900px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(255, 255, 255, 0.92);
+            border: 1px solid var(--color-border);
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.4rem;
+            color: var(--color-ink);
+            line-height: 1;
+            z-index: 2;
+            transition: background 0.15s ease;
+        }
+
+        .modal-close:hover {
+            background: var(--color-paper-warm);
+        }
+
+        .modal-image {
+            width: 100%;
+            max-height: 70vh;
+            object-fit: contain;
+            display: block;
+            background: var(--color-paper-warm);
+            border-radius: 16px 16px 0 0;
+        }
+
+        .modal-body {
+            padding: var(--space-md);
+        }
+
+        .modal-date {
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--color-accent);
+            margin-bottom: var(--space-xs);
+        }
+
+        .modal-title {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: var(--color-ink);
+            line-height: 1.3;
+            margin-bottom: var(--space-sm);
+        }
+
+        .modal-excerpt {
+            font-size: 1rem;
+            color: var(--color-ink-muted);
+            line-height: 1.7;
+        }
+
+        body.modal-open {
+            overflow: hidden;
+        }
+
         /* Gallery Section */
         .gallery-grid {
             display: grid;
@@ -1314,6 +1425,26 @@
                 <div class="news-grid">
                     <div class="news-card">
                         <div class="news-image-wrapper">
+                            <img src="images/news/Figure8-Proposed-model-V2.png" alt="Proposed model of GmJAG1 regulation in soybean leaf development" class="news-image" loading="lazy">
+                        </div>
+                        <div class="news-body">
+                            <div class="news-date">April 2026</div>
+                            <h3 class="news-title">New Preprint on bioRxiv</h3>
+                            <p class="news-excerpt">Our preprint on the genome-wide transcriptional targets of <em>GmJAG1</em>, the gene behind the narrow leaflet trait in soybean, is now available on bioRxiv.</p>
+                        </div>
+                    </div>
+                    <div class="news-card">
+                        <div class="news-image-wrapper">
+                            <img src="images/news/Roboflow-NSPP-V2.png" alt="Soybean pod segmentation workflow" class="news-image" loading="lazy">
+                        </div>
+                        <div class="news-body">
+                            <div class="news-date">April 2026</div>
+                            <h3 class="news-title">Deep Learning Pipeline for Soybean Pod Phenotyping</h3>
+                            <p class="news-excerpt">Building a deep learning pipeline to segment and count soybean pods from scanned images, enabling high-throughput phenotyping of yield components for the NSPP population.</p>
+                        </div>
+                    </div>
+                    <div class="news-card">
+                        <div class="news-image-wrapper">
                             <img src="images/news/registration_2025.jpg" alt="Journal of Plant Registrations 2025" class="news-image" loading="lazy">
                         </div>
                         <div class="news-body">
@@ -1538,6 +1669,18 @@
         <footer class="footer">
             <p>© <script>document.write(new Date().getFullYear())</script> Bishal G. Tamang. All rights reserved. · <a href="https://illinois.edu" target="_blank">University of Illinois</a></p>
         </footer>
+
+        <div id="news-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
+            <div class="modal-content" role="document">
+                <button type="button" class="modal-close" aria-label="Close">&times;</button>
+                <img id="modal-image" class="modal-image" src="" alt="">
+                <div class="modal-body">
+                    <div id="modal-date" class="modal-date"></div>
+                    <h3 id="modal-title" class="modal-title"></h3>
+                    <p id="modal-excerpt" class="modal-excerpt"></p>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script>
@@ -1613,6 +1756,66 @@
                 navLinks.style.gap = '1rem';
             }
         }
+
+        // News card modal
+        (function() {
+            const modal = document.getElementById('news-modal');
+            if (!modal) return;
+            const modalImage = document.getElementById('modal-image');
+            const modalDate = document.getElementById('modal-date');
+            const modalTitle = document.getElementById('modal-title');
+            const modalExcerpt = document.getElementById('modal-excerpt');
+            const modalClose = modal.querySelector('.modal-close');
+
+            function openNewsModal(card) {
+                const img = card.querySelector('.news-image');
+                const date = card.querySelector('.news-date');
+                const title = card.querySelector('.news-title');
+                const excerpt = card.querySelector('.news-excerpt');
+
+                if (img && img.src) {
+                    modalImage.src = img.src;
+                    modalImage.alt = img.alt || '';
+                    modalImage.style.display = '';
+                } else {
+                    modalImage.removeAttribute('src');
+                    modalImage.style.display = 'none';
+                }
+                modalDate.textContent = date ? date.textContent : '';
+                modalTitle.innerHTML = title ? title.innerHTML : '';
+                modalExcerpt.innerHTML = excerpt ? excerpt.innerHTML : '';
+
+                modal.classList.add('is-open');
+                modal.setAttribute('aria-hidden', 'false');
+                document.body.classList.add('modal-open');
+            }
+
+            function closeNewsModal() {
+                modal.classList.remove('is-open');
+                modal.setAttribute('aria-hidden', 'true');
+                document.body.classList.remove('modal-open');
+            }
+
+            document.querySelectorAll('.news-card').forEach(card => {
+                card.setAttribute('tabindex', '0');
+                card.setAttribute('role', 'button');
+                card.addEventListener('click', () => openNewsModal(card));
+                card.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        openNewsModal(card);
+                    }
+                });
+            });
+
+            modalClose.addEventListener('click', closeNewsModal);
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) closeNewsModal();
+            });
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && modal.classList.contains('is-open')) closeNewsModal();
+            });
+        })();
 
     </script>
 </body>
