@@ -623,6 +623,68 @@
             opacity: 0.7;
         }
 
+        .research-feature {
+            margin-top: var(--space-lg);
+            background: var(--color-paper);
+            border: 1px solid var(--color-border);
+            border-radius: 16px;
+            padding: var(--space-lg);
+        }
+
+        .research-feature-inner {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .research-feature-label {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--color-accent);
+            margin-bottom: var(--space-xs);
+        }
+
+        .research-feature-title {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 500;
+            line-height: 1.3;
+            margin-bottom: var(--space-sm);
+            color: var(--color-ink);
+        }
+
+        .research-feature-inner p {
+            font-size: 0.95rem;
+            color: var(--color-ink);
+            line-height: 1.7;
+            margin-bottom: var(--space-sm);
+        }
+
+        .research-feature-figure {
+            margin: var(--space-md) 0;
+            background: var(--color-paper-warm);
+            border: 1px solid var(--color-border);
+            border-radius: 12px;
+            padding: var(--space-sm);
+        }
+
+        .research-feature-figure img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 6px;
+        }
+
+        .research-feature-figure figcaption {
+            margin-top: var(--space-sm);
+            padding: 0 var(--space-xs);
+            font-size: 0.8rem;
+            color: var(--color-ink-muted);
+            line-height: 1.55;
+        }
+
         /* Publications Section */
         .publications-section {
             background: var(--color-paper-warm);
@@ -1240,6 +1302,7 @@
                         <h3>Research Areas</h3>
                         <ul class="interest-list">
                             <li>Soybean canopy architecture & leaf shape genetics</li>
+                            <li>3D canopy modeling & radiation-use efficiency</li>
                             <li>UAV and satellite remote sensing for trait prediction</li>
                             <li>Machine learning for genomic-assisted breeding</li>
                             <li>QTL mapping with predicted phenotypes</li>
@@ -1295,6 +1358,27 @@
                         <h4>Stress Physiology & Transpiration</h4>
                         <p>Characterized overlapping and distinct transcriptomic and hormonal responses to flooding and drought in soybean. Earlier work on nocturnal transpiration dynamics and circadian control of water use in cereal crops.</p>
                         <a href="https://doi.org/10.1111/tpj.15276" target="_blank" rel="noopener" class="research-card-link">Read in The Plant Journal <span class="arrow">→</span></a>
+                    </div>
+                    <div class="research-card">
+                        <div class="research-card-icon"></div>
+                        <h4>3D Canopy Modeling</h4>
+                        <p>3D ray-tracing of <em>GmJAG1</em> near-isogenic canopies shows that narrow-leaflet plants achieve ~16% higher canopy CO<sub>2</sub> assimilation than broad-leaf siblings despite ~28% lower leaf area, by distributing absorbed light across more individual leaflets and shifting more leaves into the high-quantum-yield region of the photosynthesis–PAR curve.</p>
+                        <span class="research-card-status">Manuscript in preparation</span>
+                    </div>
+                </div>
+                <div class="research-feature">
+                    <div class="research-feature-inner">
+                        <span class="research-feature-label">Research highlight</span>
+                        <h3 class="research-feature-title">Same leaves, different shape, more carbon</h3>
+                        <p>In soybean <em>GmJAG1</em> near-isogenic lines, narrow-leaflet plants have ~28% less total leaf area than their broad-leaf sister lines &mdash; yet our 3D canopy simulations show ~16% higher canopy CO<sub>2</sub> assimilation in the narrow line at peak season.</p>
+                        <p>The puzzle: both canopies absorb essentially the same fraction (~92%) of incoming PAR. The advantage doesn't come from intercepting more light.</p>
+                        <figure class="research-feature-figure">
+                            <img src="images/research/canopy_broad_vs_narrow_1600w.png" alt="3D canopy ray-tracing comparing broad-leaf and narrow-leaf soybean near-isogenic lines, showing per-leaf CO2 assimilation and absorbed PAR" width="1600" height="1297" loading="lazy">
+                            <figcaption>Broad-leaf (LR 2.0, LAI 10.2) vs narrow-leaf (LR 3.6, LAI 7.3) <em>GmJAG1</em> near-isogenic canopies. <strong>Top:</strong> per-leaf net CO<sub>2</sub> assimilation; canopy A = 36.7 vs 42.7 µmol m<sup>−2</sup> s<sup>−1</sup>. <strong>Bottom:</strong> per-leaf absorbed PAR; 395.7 vs 397.4 W m<sup>−2</sup>. Same canopy-level light interception, different distribution across leaflets.</figcaption>
+                        </figure>
+                        <p>It comes from how that light is distributed across leaflets. Narrow leaflets at matched count push more individual leaves into the high-quantum-yield region of the photosynthesis–PAR curve, with fewer top leaves saturated and fewer bottom leaves in deep shade.</p>
+                        <p>Net result: better per-photon carbon conversion at the canopy scale &mdash; the conversion-efficiency leg of Monteith's productivity framework.</p>
+                        <p><strong>The implication for breeding:</strong> leaf architecture, not just leaf area, drives canopy radiation-use efficiency. Two NILs with the same leaflet count and the same plant density can have meaningfully different canopy carbon flux based on a single morphological gene.</p>
                     </div>
                 </div>
             </div>
