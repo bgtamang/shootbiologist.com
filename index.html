@@ -965,6 +965,25 @@
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: var(--space-sm);
+            max-height: 70vh;
+            overflow-y: auto;
+            padding-right: 6px;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(0,0,0,0.25) transparent;
+        }
+
+        .gallery-grid::-webkit-scrollbar {
+            width: 8px;
+        }
+        .gallery-grid::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .gallery-grid::-webkit-scrollbar-thumb {
+            background: rgba(0,0,0,0.25);
+            border-radius: 4px;
+        }
+        .gallery-grid::-webkit-scrollbar-thumb:hover {
+            background: rgba(0,0,0,0.4);
         }
 
         .gallery-grid-item {
@@ -1733,6 +1752,50 @@
                                autoplay loop muted playsinline preload="metadata"
                                aria-label="UAV multispectral flythrough over SoyFACE soybean field, August 2024"></video>
                         <div class="gallery-label">UAV Field Flythrough — SoyFACE 2024</div>
+                    </div>
+                    <div class="gallery-grid-item">
+                        <img src="images/gallery/phenotyping/SPAD.jpg" alt="SPAD-502 chlorophyll meter held against soybean canopy showing reading of 45.5" loading="lazy">
+                        <div class="gallery-label">SPAD Chlorophyll Readings</div>
+                    </div>
+                    <div class="gallery-grid-item">
+                        <img src="images/gallery/phenotyping/drone_rtf.jpg" alt="Drone RTK base station and ground control panel in field" loading="lazy">
+                        <div class="gallery-label">Drone RTK Base Station</div>
+                    </div>
+                    <div class="gallery-grid-item">
+                        <img src="images/gallery/phenotyping/phenotyping_1.jpg" alt="Cable-suspended camera platform over young soybean field" loading="lazy">
+                        <div class="gallery-label">Cable-Suspended Aerial Imaging</div>
+                    </div>
+                    <div class="gallery-grid-item">
+                        <img src="images/gallery/phenotyping/phenotyping_2.jpg" alt="TerraSentia ground robot navigating between crop rows" loading="lazy">
+                        <div class="gallery-label">TerraSentia Crop Robot</div>
+                    </div>
+                    <div class="gallery-grid-item">
+                        <img src="images/gallery/phenotyping/phenotyping_3.jpg" alt="Multiple LI-COR 6800 portable photosynthesis systems on workshop tables" loading="lazy">
+                        <div class="gallery-label">LI-COR 6800 Calibration Setup</div>
+                    </div>
+                    <div class="gallery-grid-item">
+                        <img src="images/gallery/phenotyping/phenotyping_4.jpg" alt="Field spectroradiometer on tripod with handheld controller in soybean canopy" loading="lazy">
+                        <div class="gallery-label">Field Spectroradiometer</div>
+                    </div>
+                    <div class="gallery-grid-item">
+                        <img src="images/gallery/phenotyping/phenotyping_5.jpg" alt="FLIR thermal infrared image of plant canopy showing temperature gradient" loading="lazy">
+                        <div class="gallery-label">Thermal Canopy Imaging</div>
+                    </div>
+                    <div class="gallery-grid-item">
+                        <img src="images/gallery/phenotyping/phenotyping_6.jpg" alt="DJI Mavic 3 controller showing UAV flight planning interface over soybean field" loading="lazy">
+                        <div class="gallery-label">UAV Mission Planning</div>
+                    </div>
+                    <div class="gallery-grid-item">
+                        <img src="images/gallery/phenotyping/phenotyping_7.jpg" alt="Bench of analytical balances for gravimetric whole-plant transpiration measurements" loading="lazy">
+                        <div class="gallery-label">Gravimetric Transpiration Lab</div>
+                    </div>
+                    <div class="gallery-grid-item">
+                        <img src="images/gallery/phenotyping/photosynq.jpg" alt="Laptop running PhotosynQ Desktop with MultispeQ sensor in soybean field" loading="lazy">
+                        <div class="gallery-label">PhotosynQ Field Sensing</div>
+                    </div>
+                    <div class="gallery-grid-item">
+                        <img src="images/gallery/phenotyping/rice_flooding.jpg" alt="Greenhouse rice seedling trays with flooding tank for submergence trials" loading="lazy">
+                        <div class="gallery-label">Rice Submergence Trials</div>
                     </div>
                 </div>
             </div>
