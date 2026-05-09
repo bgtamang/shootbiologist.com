@@ -1038,15 +1038,24 @@
             transform: scale(1.05);
         }
 
-        .gallery-grid-item img {
+        .gallery-grid-item img,
+        .gallery-grid-item video {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.4s var(--transition-smooth);
+            display: block;
         }
 
-        .gallery-grid-item:hover img {
+        .gallery-grid-item:hover img,
+        .gallery-grid-item:hover video {
             transform: scale(1.05);
+        }
+
+        .lightbox-video {
+            max-width: 95vw;
+            max-height: 88vh;
+            background: black;
         }
 
         .gallery-grid-item .gallery-label {
@@ -1711,6 +1720,13 @@
                         <img src="images/gallery/lab/leaf_clearing_narrow_vs_broad.jpg" alt="Cleared soybean leaves comparing narrow and broad leaf isolines" loading="lazy">
                         <div class="gallery-label">Cleared Leaf Anatomy: Narrow vs Broad</div>
                     </div>
+                    <div class="gallery-grid-item">
+                        <video src="images/gallery/phenotyping/spydercam_flythrough.mp4"
+                               poster="images/gallery/phenotyping/spydercam.jpg"
+                               autoplay loop muted playsinline preload="metadata"
+                               aria-label="Spydercam aerial flythrough of soybean field"></video>
+                        <div class="gallery-label">Spydercam Field Flythrough</div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -1830,6 +1846,7 @@
             <button type="button" class="lightbox-close" aria-label="Close image viewer">&times;</button>
             <div class="lightbox-content" role="document">
                 <img id="lightbox-image" class="lightbox-image" src="" alt="">
+                <video id="lightbox-video" class="lightbox-video" controls loop playsinline preload="metadata" style="display:none;"></video>
                 <div id="lightbox-caption" class="lightbox-caption"></div>
             </div>
         </div>
@@ -1981,24 +1998,39 @@
             });
         })();
 
-        // Gallery image lightbox
+        // Gallery image / video lightbox
         (function() {
             const lightbox = document.getElementById('image-lightbox');
             if (!lightbox) return;
             const lbImage = document.getElementById('lightbox-image');
+            const lbVideo = document.getElementById('lightbox-video');
             const lbCaption = document.getElementById('lightbox-caption');
             const lbClose = lightbox.querySelector('.lightbox-close');
 
-            function openLightbox(img, label) {
-                lbImage.src = img.src;
-                lbImage.alt = img.alt || '';
-                lbCaption.textContent = label || img.alt || '';
+            function openLightbox(media, label) {
+                const isVideo = media.tagName === 'VIDEO';
+                if (isVideo) {
+                    lbImage.style.display = 'none';
+                    lbVideo.style.display = '';
+                    lbVideo.src = media.currentSrc || media.src;
+                    lbVideo.muted = false;
+                    lbVideo.play().catch(() => {});
+                } else {
+                    lbVideo.style.display = 'none';
+                    lbImage.style.display = '';
+                    lbImage.src = media.src;
+                    lbImage.alt = media.alt || '';
+                }
+                lbCaption.textContent = label || media.alt || '';
                 lightbox.classList.add('is-open');
                 lightbox.setAttribute('aria-hidden', 'false');
                 document.body.classList.add('modal-open');
             }
 
             function closeLightbox() {
+                if (!lbVideo.paused) lbVideo.pause();
+                lbVideo.removeAttribute('src');
+                lbVideo.load();
                 lightbox.classList.remove('is-open');
                 lightbox.setAttribute('aria-hidden', 'true');
                 document.body.classList.remove('modal-open');
@@ -2007,15 +2039,15 @@
             document.querySelectorAll('.gallery-grid-item').forEach(item => {
                 item.setAttribute('tabindex', '0');
                 item.setAttribute('role', 'button');
-                const img = item.querySelector('img');
+                const media = item.querySelector('img, video');
                 const labelEl = item.querySelector('.gallery-label');
                 const label = labelEl ? labelEl.textContent.trim() : '';
-                if (img) item.setAttribute('aria-label', `View larger: ${label || img.alt}`);
-                item.addEventListener('click', () => { if (img) openLightbox(img, label); });
+                if (media) item.setAttribute('aria-label', `View larger: ${label || media.alt || ''}`);
+                item.addEventListener('click', () => { if (media) openLightbox(media, label); });
                 item.addEventListener('keydown', (e) => {
                     if (e.key === 'Enter' || e.key === ' ') {
                         e.preventDefault();
-                        if (img) openLightbox(img, label);
+                        if (media) openLightbox(media, label);
                     }
                 });
             });
