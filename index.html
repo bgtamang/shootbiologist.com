@@ -124,6 +124,15 @@
             color: white;
         }
 
+        em {
+            margin-inline-start: -0.05em;
+            margin-inline-end: -0.05em;
+        }
+
+        .gene-paren {
+            white-space: nowrap;
+        }
+
         /* Page wrapper */
         .page-wrapper {
             opacity: 1;
@@ -1388,7 +1397,7 @@
                 <div class="about-grid">
                     <div class="about-text">
                         <p>I am a Research Scientist in the <a href="https://publish.illinois.edu/ainsworthlab/lisa-ainsworth/" target="_blank">Ainsworth Lab</a> at the University of Illinois, working within the <a href="https://ripe.illinois.edu/" target="_blank">RIPE project</a> at the Institute for Genomic Biology. My research program integrates genetics, remote sensing, and computational biology to improve soybean canopy architecture for greater photosynthetic efficiency and yield.</p>
-                        <p>I developed over 200 backcross lines and CRISPR-edited soybean targeting the narrow leaf (<em>ln</em>) locus to optimize leaf area index. I combine UAV and satellite imagery with machine learning to predict plant traits at scale, and use these predicted phenotypes for QTL mapping and phenomic selection. My earlier work characterized transcriptomic responses to flooding and drought stress in soybean, and transpiration dynamics in cereal crops.</p>
+                        <p>I developed over 200 backcross lines and CRISPR-edited soybean targeting the narrow leaf <span class="gene-paren">(<em>ln</em>)</span> locus to optimize leaf area index. I combine UAV and satellite imagery with machine learning to predict plant traits at scale, and use these predicted phenotypes for QTL mapping. My earlier work characterized transcriptomic responses to flooding and drought stress in soybean, and transpiration dynamics in cereal crops.</p>
                     </div>
                     <div class="research-interests">
                         <h3>Research Areas</h3>
@@ -1398,7 +1407,7 @@
                             <li>UAV and satellite remote sensing for trait prediction</li>
                             <li>Machine learning for genomic-assisted breeding</li>
                             <li>QTL mapping with predicted phenotypes</li>
-                            <li>Transcriptomics & gene function (GmJAG1/<em>ln</em>)</li>
+                            <li>Transcriptomics & gene function <span class="gene-paren">(GmJAG1/<em>ln</em>)</span></li>
                             <li>Plant stress physiology (flooding, drought, transpiration)</li>
                         </ul>
                     </div>
@@ -1424,19 +1433,13 @@
                     <div class="research-card">
                         <div class="research-card-icon"></div>
                         <h4>Remote Sensing & Machine Learning</h4>
-                        <p>Using multispectral UAV and satellite (Sentinel-2, Planet) imagery with XGBoost, random forest, and SVM models to predict peak LAI and yield across multi-environment soybean trials with hundreds of genotypes.</p>
+                        <p>Using multispectral UAV and Pléiades Neo satellite imagery with XGBoost, random forest, and SVM models to predict peak LAI and yield across multi-environment soybean trials with hundreds of genotypes.</p>
                         <span class="research-card-status">Manuscript in preparation</span>
                     </div>
                     <div class="research-card">
                         <div class="research-card-icon"></div>
                         <h4>QTL Mapping with Predicted Traits</h4>
                         <p>Applying mixed-model GWAS to ML-predicted BLUPs from remote sensing data to identify genetic loci for canopy traits. Identified 70 significant SNPs (29 independent signals after LD pruning) replicated across field locations.</p>
-                        <span class="research-card-status">Manuscript in preparation</span>
-                    </div>
-                    <div class="research-card">
-                        <div class="research-card-icon"></div>
-                        <h4>Phenomic Selection</h4>
-                        <p>Integrating spectral reflectance data into genomic prediction frameworks. Satellite-derived phenomic selection achieves prediction accuracies comparable to UAV platforms, enabling scalable breeding applications.</p>
                         <span class="research-card-status">Manuscript in preparation</span>
                     </div>
                     <div class="research-card">
@@ -1486,12 +1489,12 @@
                 </div>
                 
                 <div class="pub-categories" role="tablist" aria-label="Publication categories">
-                    <button class="pub-tab active" role="tab" aria-selected="true" aria-controls="patents" onclick="showPubCategory('patents', this)">Patents</button>
-                    <button class="pub-tab" role="tab" aria-selected="false" aria-controls="selected" onclick="showPubCategory('selected', this)">Selected Publications</button>
+                    <button class="pub-tab active" role="tab" aria-selected="true" aria-controls="selected" onclick="showPubCategory('selected', this)">Selected Publications</button>
+                    <button class="pub-tab" role="tab" aria-selected="false" aria-controls="patents" onclick="showPubCategory('patents', this)">Patents</button>
                     <button class="pub-tab" role="tab" aria-selected="false" aria-controls="preprints" onclick="showPubCategory('preprints', this)">Preprints</button>
                 </div>
 
-                <div id="patents" class="pub-content active" role="tabpanel">
+                <div id="patents" class="pub-content" role="tabpanel">
                     <div class="patents-grid">
                         <div class="patent-card">
                             <h4>Breeding soybean for reduced leaf area index</h4>
@@ -1508,7 +1511,7 @@
                     </div>
                 </div>
 
-                <div id="selected" class="pub-content" role="tabpanel">
+                <div id="selected" class="pub-content active" role="tabpanel">
                     <ul class="pub-list">
                         <li class="pub-item">
                             <a href="https://doi.org/10.1002/plr2.70045" target="_blank">
