@@ -13,16 +13,23 @@
     <!-- Open Graph -->
     <meta property="og:title" content="Bishal G. Tamang, Ph.D. — Molecular Crop Physiologist">
     <meta property="og:description" content="Molecular Crop Physiologist at University of Illinois, integrating genetics, remote sensing, and machine learning to improve soybean canopy architecture.">
-    <meta property="og:image" content="https://www.shootbiologist.com/headshot-optimized.jpg">
+    <meta property="og:image" content="https://www.shootbiologist.com/og-card.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="3D canopy simulations of broad-leaf and narrow-leaf soybean near-isogenic lines, showing higher canopy CO2 assimilation in the narrow-leaf line despite lower leaf area index.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.shootbiologist.com">
+    <meta property="og:site_name" content="Bishal G. Tamang, Ph.D.">
+    <meta property="og:locale" content="en_US">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Bishal G. Tamang, Ph.D. — Molecular Crop Physiologist">
     <meta name="twitter:description" content="Molecular Crop Physiologist at University of Illinois, integrating genetics, remote sensing, and machine learning to improve soybean canopy architecture.">
-    <meta name="twitter:image" content="https://www.shootbiologist.com/headshot-optimized.jpg">
+    <meta name="twitter:image" content="https://www.shootbiologist.com/og-card.jpg">
+    <meta name="twitter:image:alt" content="3D canopy simulations of broad-leaf and narrow-leaf soybean near-isogenic lines.">
     <meta name="twitter:site" content="@bgtamang">
+    <meta name="twitter:creator" content="@bgtamang">
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://www.shootbiologist.com">
@@ -30,16 +37,68 @@
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🌱%3C/text%3E%3C/svg%3E">
 
+    <!-- Browser UI colour, per theme -->
+    <meta name="theme-color" content="#faf9f7" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#141413" media="(prefers-color-scheme: dark)">
+
+    <!-- Theme init: must run before first paint to avoid a flash of light theme -->
+    <script>
+        (function() {
+            var saved = null;
+            try { saved = localStorage.getItem('theme'); } catch (e) {}
+            var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (saved === 'dark' || (saved === null && prefersDark)) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+    </script>
+
     <!-- Structured Data -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "Person",
+        "@id": "https://www.shootbiologist.com/#person",
         "name": "Bishal G. Tamang",
+        "givenName": "Bishal",
+        "familyName": "Tamang",
+        "honorificSuffix": "Ph.D.",
         "jobTitle": "Molecular Crop Physiologist",
+        "description": "Research Scientist in the Ainsworth Lab at the University of Illinois, integrating genetics, remote sensing, and computational biology to improve soybean canopy architecture.",
+        "email": "mailto:bgtamang@illinois.edu",
         "affiliation": {
             "@type": "Organization",
             "name": "University of Illinois Urbana-Champaign"
+        },
+        "worksFor": {
+            "@type": "ResearchOrganization",
+            "name": "Carl R. Woese Institute for Genomic Biology, University of Illinois Urbana-Champaign",
+            "url": "https://www.igb.illinois.edu/",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Urbana-Champaign",
+                "addressRegion": "IL",
+                "postalCode": "61801",
+                "addressCountry": "US"
+            }
+        },
+        "alumniOf": [
+            {
+                "@type": "CollegeOrUniversity",
+                "name": "Virginia Tech",
+                "url": "https://www.vt.edu/"
+            },
+            {
+                "@type": "CollegeOrUniversity",
+                "name": "Tribhuvan University",
+                "url": "https://tribhuvan-university.edu.np/"
+            }
+        ],
+        "identifier": {
+            "@type": "PropertyValue",
+            "propertyID": "ORCID",
+            "value": "0000-0003-4991-6354",
+            "url": "https://orcid.org/0000-0003-4991-6354"
         },
         "url": "https://www.shootbiologist.com",
         "image": "https://www.shootbiologist.com/headshot-optimized.jpg",
@@ -50,7 +109,126 @@
             "https://www.linkedin.com/in/bishal-tamang-2b45bb37/",
             "https://x.com/bgtamang"
         ],
-        "knowsAbout": ["Crop Physiology", "Photosynthesis", "High-Throughput Phenotyping", "Soybean", "Plant Biology"]
+        "knowsAbout": [
+            "Crop Physiology",
+            "Photosynthesis",
+            "High-Throughput Phenotyping",
+            "Soybean",
+            "Plant Biology",
+            "Canopy Architecture",
+            "Remote Sensing",
+            "QTL Mapping",
+            "Transcriptomics"
+        ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "@id": "https://www.shootbiologist.com/#website",
+        "url": "https://www.shootbiologist.com",
+        "name": "Bishal G. Tamang, Ph.D.",
+        "inLanguage": "en-US",
+        "author": { "@id": "https://www.shootbiologist.com/#person" },
+        "publisher": { "@id": "https://www.shootbiologist.com/#person" }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "Selected publications — Bishal G. Tamang",
+        "itemListOrder": "https://schema.org/ItemListOrderDescending",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                    "@type": "ScholarlyArticle",
+                    "headline": "Natural leaf shape variation reveals diverse transcriptional targets of GmJAG1 during soybean leaf development",
+                    "author": [
+                        { "@id": "https://www.shootbiologist.com/#person" },
+                        { "@type": "Person", "name": "Casey Kramer" },
+                        { "@type": "Person", "name": "Elizabeth A. Ainsworth" }
+                    ],
+                    "isPartOf": { "@type": "Periodical", "name": "The Plant Journal" },
+                    "datePublished": "2026",
+                    "sameAs": "https://doi.org/10.1111/tpj.71088"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                    "@type": "ScholarlyArticle",
+                    "headline": "Registration of four soybean lines in a common genetic background with contrasting leaf shape",
+                    "author": [
+                        { "@id": "https://www.shootbiologist.com/#person" },
+                        { "@type": "Person", "name": "Brian W. Diers" },
+                        { "@type": "Person", "name": "Elizabeth A. Ainsworth" }
+                    ],
+                    "isPartOf": { "@type": "Periodical", "name": "Journal of Plant Registrations" },
+                    "datePublished": "2025",
+                    "sameAs": "https://doi.org/10.1002/plr2.70045"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "item": {
+                    "@type": "ScholarlyArticle",
+                    "headline": "Bigger is not always better: optimizing leaf area index with narrow leaf shape in soybean",
+                    "author": [
+                        { "@id": "https://www.shootbiologist.com/#person" },
+                        { "@type": "Person", "name": "Guillaume Bernard" },
+                        { "@type": "Person", "name": "Carl J. Bernacchi" },
+                        { "@type": "Person", "name": "Brian W. Diers" },
+                        { "@type": "Person", "name": "Elizabeth A. Ainsworth" }
+                    ],
+                    "isPartOf": { "@type": "Periodical", "name": "Plant Physiology" },
+                    "datePublished": "2025",
+                    "sameAs": "https://doi.org/10.1093/plphys/kiaf663"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 4,
+                "item": {
+                    "@type": "ScholarlyArticle",
+                    "headline": "Overlapping and stress-specific transcriptomic and hormonal responses to flooding and drought in soybean",
+                    "author": [
+                        { "@id": "https://www.shootbiologist.com/#person" },
+                        { "@type": "Person", "name": "Sheng Li" },
+                        { "@type": "Person", "name": "Dhivyaa Rajasundaram" },
+                        { "@type": "Person", "name": "Smit Lamichhane" },
+                        { "@type": "Person", "name": "Takeshi Fukao" }
+                    ],
+                    "isPartOf": { "@type": "Periodical", "name": "The Plant Journal" },
+                    "datePublished": "2021",
+                    "sameAs": "https://doi.org/10.1111/tpj.15276"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 5,
+                "item": {
+                    "@type": "ScholarlyArticle",
+                    "headline": "Physiological and transcriptomic characterization of submergence and reoxygenation responses in soybean seedlings",
+                    "author": [
+                        { "@id": "https://www.shootbiologist.com/#person" },
+                        { "@type": "Person", "name": "Joseph O. Magliozzi" },
+                        { "@type": "Person", "name": "M. A. Saghai Maroof" },
+                        { "@type": "Person", "name": "Takeshi Fukao" }
+                    ],
+                    "isPartOf": { "@type": "Periodical", "name": "Plant, Cell and Environment" },
+                    "datePublished": "2014",
+                    "sameAs": "https://doi.org/10.1111/pce.12277"
+                }
+            }
+        ]
     }
     </script>
 
@@ -107,6 +285,22 @@
 
         html {
             scroll-behavior: smooth;
+            scroll-padding-top: 6rem;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
         }
 
         body {
@@ -122,6 +316,13 @@
         ::selection {
             background: var(--color-accent);
             color: white;
+        }
+
+        /* <picture> only exists to offer a WebP source -- it must not introduce
+           a box of its own, or percentage sizing on the <img> resolves against
+           it instead of the intended container. */
+        picture {
+            display: contents;
         }
 
         em {
@@ -217,6 +418,22 @@
 
         .nav-links a:hover::after {
             width: 100%;
+        }
+
+        /* Current section, set by the scrollspy */
+        .nav-links a.is-active {
+            color: var(--color-ink);
+        }
+
+        .nav-links a.is-active::after {
+            width: 100%;
+        }
+
+        .nav-links a:focus-visible,
+        .theme-toggle:focus-visible,
+        .mobile-menu-btn:focus-visible {
+            outline: 2px solid var(--color-accent);
+            outline-offset: 3px;
         }
 
         .nav-controls {
@@ -1104,6 +1321,33 @@
             opacity: 1;
         }
 
+        /* Video tiles: poster only until the visitor opens the lightbox */
+        .gallery-grid-item.is-video {
+            cursor: pointer;
+        }
+
+        .play-badge {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.55);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-left: 3px;
+            pointer-events: none;
+            transition: background 0.3s var(--transition-smooth);
+        }
+
+        .gallery-grid-item:hover .play-badge {
+            background: var(--color-accent);
+        }
+
         /* CV Section */
         .cv-grid {
             display: grid;
@@ -1265,8 +1509,34 @@
                 display: none;
             }
 
+            .nav-links.is-open {
+                display: flex;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                gap: var(--space-sm);
+                background: var(--color-paper);
+                padding: var(--space-sm) var(--space-md) var(--space-md);
+                border-bottom: 1px solid var(--color-border);
+                box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
+            }
+
             .mobile-menu-btn {
                 display: flex;
+            }
+
+            .mobile-menu-btn.is-open span:nth-child(1) {
+                transform: translateY(5.5px) rotate(45deg);
+            }
+
+            .mobile-menu-btn.is-open span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .mobile-menu-btn.is-open span:nth-child(3) {
+                transform: translateY(-5.5px) rotate(-45deg);
             }
 
             .hero {
@@ -1327,7 +1597,7 @@
         <nav class="nav" id="nav">
             <div class="nav-inner">
                 <a href="#" class="nav-logo">Bishal <span>Tamang</span></a>
-                <ul class="nav-links">
+                <ul class="nav-links" id="nav-links">
                     <li><a href="#about">About</a></li>
                     <li><a href="#research">Research</a></li>
                     <li><a href="#publications">Publications</a></li>
@@ -1337,10 +1607,10 @@
                     <li><a href="#contact">Contact</a></li>
                 </ul>
                 <div class="nav-controls">
-                    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
-                        <span id="theme-icon">☀️</span>
+                    <button type="button" class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+                        <span id="theme-icon" aria-hidden="true">☀️</span>
                     </button>
-                    <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Menu">
+                    <button type="button" class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Menu" aria-expanded="false" aria-controls="nav-links">
                         <span></span>
                         <span></span>
                         <span></span>
@@ -1446,7 +1716,7 @@
                         <div class="research-card-icon"></div>
                         <h4>Transcriptomics & Gene Function</h4>
                         <p>RNA-seq and single-cell transcriptomic analysis of GmJAG1, the narrow leaf gene. JAG1 acts as a transcriptional repressor of cell cycle regulators including D-type cyclins and histone deacetylases in leaf primordia.</p>
-                        <a href="https://doi.org/10.64898/2026.04.08.717315" target="_blank" rel="noopener" class="research-card-link">Read preprint on bioRxiv <span class="arrow">→</span></a>
+                        <a href="https://doi.org/10.1111/tpj.71088" target="_blank" rel="noopener" class="research-card-link">Read the paper in The Plant Journal <span class="arrow">→</span></a>
                     </div>
                     <div class="research-card">
                         <div class="research-card-icon"></div>
@@ -1468,7 +1738,18 @@
                         <p>In soybean <em>GmJAG1</em> near-isogenic lines, narrow-leaflet plants have ~28% less total leaf area than their broad-leaf sister lines &mdash; yet our 3D canopy simulations show ~16% higher canopy CO<sub>2</sub> assimilation in the narrow line at peak season.</p>
                         <p>The puzzle: both canopies absorb essentially the same fraction (~92%) of incoming PAR. The advantage doesn't come from intercepting more light.</p>
                         <figure class="research-feature-figure">
-                            <img src="images/research/canopy_broad_vs_narrow_1600w.png" alt="3D canopy ray-tracing comparing broad-leaf and narrow-leaf soybean near-isogenic lines, showing per-leaf CO2 assimilation and absorbed PAR" width="1600" height="1297" loading="lazy">
+                            <picture>
+                                <source type="image/webp"
+                                        srcset="images/research/canopy_broad_vs_narrow_800w.webp 800w,
+                                                images/research/canopy_broad_vs_narrow_1600w.webp 1600w"
+                                        sizes="(max-width: 768px) 100vw, 688px">
+                                <img src="images/research/canopy_broad_vs_narrow_1600w.png"
+                                     srcset="images/research/canopy_broad_vs_narrow_800w.png 800w,
+                                             images/research/canopy_broad_vs_narrow_1600w.png 1600w"
+                                     sizes="(max-width: 768px) 100vw, 688px"
+                                     alt="3D canopy ray-tracing comparing broad-leaf and narrow-leaf soybean near-isogenic lines, showing per-leaf CO2 assimilation and absorbed PAR"
+                                     width="1600" height="1297" loading="lazy">
+                            </picture>
                             <figcaption>Broad-leaf (LR 2.0, LAI 10.2) vs narrow-leaf (LR 3.6, LAI 7.3) <em>GmJAG1</em> near-isogenic canopies. <strong>Top:</strong> per-leaf net CO<sub>2</sub> assimilation; canopy A = 36.7 vs 42.7 µmol m<sup>−2</sup> s<sup>−1</sup>. <strong>Bottom:</strong> per-leaf absorbed PAR; 395.7 vs 397.4 W m<sup>−2</sup>. Same canopy-level light interception, different distribution across leaflets.</figcaption>
                         </figure>
                         <p>It comes from how that light is distributed across leaflets. Narrow leaflets at matched count push more individual leaves into the high-quantum-yield region of the photosynthesis–PAR curve, with fewer top leaves saturated and fewer bottom leaves in deep shade.</p>
@@ -1491,7 +1772,6 @@
                 <div class="pub-categories" role="tablist" aria-label="Publication categories">
                     <button class="pub-tab active" role="tab" aria-selected="true" aria-controls="selected" onclick="showPubCategory('selected', this)">Selected Publications</button>
                     <button class="pub-tab" role="tab" aria-selected="false" aria-controls="patents" onclick="showPubCategory('patents', this)">Patents</button>
-                    <button class="pub-tab" role="tab" aria-selected="false" aria-controls="preprints" onclick="showPubCategory('preprints', this)">Preprints</button>
                 </div>
 
                 <div id="patents" class="pub-content" role="tabpanel">
@@ -1513,6 +1793,13 @@
 
                 <div id="selected" class="pub-content active" role="tabpanel">
                     <ul class="pub-list">
+                        <li class="pub-item">
+                            <a href="https://doi.org/10.1111/tpj.71088" target="_blank" rel="noopener">
+                                <div class="pub-title">Natural leaf shape variation reveals diverse transcriptional targets of <em>GmJAG1</em> during soybean leaf development</div>
+                                <div class="pub-authors">Tamang BG, Kramer C, Ainsworth EA</div>
+                                <div class="pub-journal">The Plant Journal 127: e71088, 2026</div>
+                            </a>
+                        </li>
                         <li class="pub-item">
                             <a href="https://doi.org/10.1002/plr2.70045" target="_blank">
                                 <div class="pub-title">Registration of four soybean lines in a common genetic background with contrasting leaf shape</div>
@@ -1579,18 +1866,6 @@
                     </ul>
                 </div>
 
-                <div id="preprints" class="pub-content" role="tabpanel">
-                    <ul class="pub-list">
-                        <li class="pub-item">
-                            <a href="https://doi.org/10.64898/2026.04.08.717315" target="_blank" rel="noopener">
-                                <div class="pub-title">Natural leaf shape variation reveals diverse transcriptional targets of <em>GmJAG1</em> during soybean leaf development</div>
-                                <div class="pub-authors">Tamang BG, Kramer C, Ainsworth EA</div>
-                                <div class="pub-journal">bioRxiv, April 2026 · doi.org/10.64898/2026.04.08.717315</div>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-
             </div>
         </section>
 
@@ -1604,17 +1879,23 @@
                 <div class="news-grid">
                     <div class="news-card">
                         <div class="news-image-wrapper">
-                            <img src="images/news/Figure8-Proposed-model-V2.png" alt="Proposed model of GmJAG1 regulation in soybean leaf development" class="news-image" loading="lazy">
+                            <picture>
+                                <source srcset="images/news/Figure8-Proposed-model-V2.webp" type="image/webp">
+                                <img src="images/news/Figure8-Proposed-model-V2.png" alt="Proposed model of GmJAG1 regulation in soybean leaf development" class="news-image" loading="lazy">
+                            </picture>
                         </div>
                         <div class="news-body">
-                            <div class="news-date">April 2026</div>
-                            <h3 class="news-title">New Preprint on bioRxiv</h3>
-                            <p class="news-excerpt">Our preprint on the genome-wide transcriptional targets of <em>GmJAG1</em>, the gene behind the narrow leaflet trait in soybean, is now available on bioRxiv.</p>
+                            <div class="news-date">August 2026</div>
+                            <h3 class="news-title">New Publication in The Plant Journal</h3>
+                            <p class="news-excerpt">Our paper "Natural leaf shape variation reveals diverse transcriptional targets of <em>GmJAG1</em> during soybean leaf development" is now published in The Plant Journal! Using a developmental time series across four soybean genotypes, we identified 1,567 candidate <em>GmJAG1</em> targets and found that soybean JAG1 acts through D-type cyclins rather than the KRP pathway described in Arabidopsis. Open access: <a href="https://doi.org/10.1111/tpj.71088" target="_blank" rel="noopener">doi.org/10.1111/tpj.71088</a></p>
                         </div>
                     </div>
                     <div class="news-card">
                         <div class="news-image-wrapper">
-                            <img src="images/news/Roboflow-NSPP-V2.png" alt="Soybean pod segmentation workflow" class="news-image" loading="lazy">
+                            <picture>
+                                <source srcset="images/news/Roboflow-NSPP-V2.webp" type="image/webp">
+                                <img src="images/news/Roboflow-NSPP-V2.png" alt="Soybean pod segmentation workflow" class="news-image" loading="lazy">
+                            </picture>
                         </div>
                         <div class="news-body">
                             <div class="news-date">April 2026</div>
@@ -1624,7 +1905,10 @@
                     </div>
                     <div class="news-card">
                         <div class="news-image-wrapper">
-                            <img src="images/news/registration_2025.jpg" alt="Journal of Plant Registrations 2025" class="news-image" loading="lazy">
+                            <picture>
+                                <source srcset="images/news/registration_2025.webp" type="image/webp">
+                                <img src="images/news/registration_2025.jpg" alt="Journal of Plant Registrations 2025" class="news-image" loading="lazy">
+                            </picture>
                         </div>
                         <div class="news-body">
                             <div class="news-date">March 2026</div>
@@ -1634,7 +1918,10 @@
                     </div>
                     <div class="news-card">
                         <div class="news-image-wrapper">
-                            <img src="images/news/tamang_2025_pp.jpg" alt="Plant Physiology 2025 publication" class="news-image" loading="lazy">
+                            <picture>
+                                <source srcset="images/news/tamang_2025_pp.webp" type="image/webp">
+                                <img src="images/news/tamang_2025_pp.jpg" alt="Plant Physiology 2025 publication" class="news-image" loading="lazy">
+                            </picture>
                         </div>
                         <div class="news-body">
                             <div class="news-date">December 2025</div>
@@ -1644,7 +1931,10 @@
                     </div>
                     <div class="news-card">
                         <div class="news-image-wrapper">
-                            <img src="images/news/fao_1.jpg" alt="FAO Conference" class="news-image" loading="lazy">
+                            <picture>
+                                <source srcset="images/news/fao_1.webp" type="image/webp">
+                                <img src="images/news/fao_1.jpg" alt="FAO Conference" class="news-image" loading="lazy">
+                            </picture>
                         </div>
                         <div class="news-body">
                             <div class="news-date">June 2025</div>
@@ -1654,7 +1944,10 @@
                     </div>
                     <div class="news-card">
                         <div class="news-image-wrapper">
-                            <img src="images/news/AGBT_2025_1.jpg" alt="AGBT 2025" class="news-image" loading="lazy">
+                            <picture>
+                                <source srcset="images/news/AGBT_2025_1.webp" type="image/webp">
+                                <img src="images/news/AGBT_2025_1.jpg" alt="AGBT 2025" class="news-image" loading="lazy">
+                            </picture>
                         </div>
                         <div class="news-body">
                             <div class="news-date">February 2025</div>
@@ -1664,7 +1957,10 @@
                     </div>
                     <div class="news-card">
                         <div class="news-image-wrapper">
-                            <img src="images/news/Monnens_2024.jpg" alt="Functional Plant Biology" class="news-image" loading="lazy">
+                            <picture>
+                                <source srcset="images/news/Monnens_2024.webp" type="image/webp">
+                                <img src="images/news/Monnens_2024.jpg" alt="Functional Plant Biology" class="news-image" loading="lazy">
+                            </picture>
                         </div>
                         <div class="news-body">
                             <div class="news-date">November 2024</div>
@@ -1681,7 +1977,10 @@
                     </div>
                     <div class="news-card">
                         <div class="news-image-wrapper">
-                            <img src="images/news/SBW_2024.jpeg" alt="Soybean Breeders Workshop" class="news-image" loading="lazy">
+                            <picture>
+                                <source srcset="images/news/SBW_2024.webp" type="image/webp">
+                                <img src="images/news/SBW_2024.jpeg" alt="Soybean Breeders Workshop" class="news-image" loading="lazy">
+                            </picture>
                         </div>
                         <div class="news-body">
                             <div class="news-date">August 2024</div>
@@ -1703,101 +2002,170 @@
 
                 <div class="gallery-grid">
                     <div class="gallery-grid-item">
-                        <img src="images/gallery/field/field_2.jpg" alt="Soybean leaf shape diversity" loading="lazy">
+                        <picture>
+                            <source srcset="images/gallery/field/field_2.webp" type="image/webp">
+                            <img src="images/gallery/field/field_2.jpg" alt="Soybean leaf shape diversity" loading="lazy">
+                        </picture>
                         <div class="gallery-label">Leaf Shape Diversity</div>
                     </div>
                     <div class="gallery-grid-item">
-                        <img src="images/gallery/phenotyping/drone.png" alt="Research drone" loading="lazy">
+                        <picture>
+                            <source srcset="images/gallery/phenotyping/drone.webp" type="image/webp">
+                            <img src="images/gallery/phenotyping/drone.jpg" alt="Research drone" loading="lazy">
+                        </picture>
                         <div class="gallery-label">UAV Phenotyping Platform</div>
                     </div>
                     <div class="gallery-grid-item">
-                        <img src="images/gallery/phenotyping/licor6800.jpg" alt="LI-COR 6800 gas exchange" loading="lazy">
+                        <picture>
+                            <source srcset="images/gallery/phenotyping/licor6800.webp" type="image/webp">
+                            <img src="images/gallery/phenotyping/licor6800.jpg" alt="LI-COR 6800 gas exchange" loading="lazy">
+                        </picture>
                         <div class="gallery-label">Gas Exchange Measurements</div>
                     </div>
                     <div class="gallery-grid-item">
-                        <img src="images/gallery/team/team_1.jpg" alt="Ainsworth Lab group" loading="lazy">
+                        <picture>
+                            <source srcset="images/gallery/team/team_1.webp" type="image/webp">
+                            <img src="images/gallery/team/team_1.jpg" alt="Ainsworth Lab group" loading="lazy">
+                        </picture>
                         <div class="gallery-label">Ainsworth Lab 2024</div>
                     </div>
                     <div class="gallery-grid-item">
-                        <img src="images/gallery/field/field_1.jpg" alt="Soybean field trials" loading="lazy">
+                        <picture>
+                            <source srcset="images/gallery/field/field_1.webp" type="image/webp">
+                            <img src="images/gallery/field/field_1.jpg" alt="Soybean field trials" loading="lazy">
+                        </picture>
                         <div class="gallery-label">Soybean Field Trials</div>
                     </div>
                     <div class="gallery-grid-item">
-                        <img src="images/gallery/lab/greenhouse plants.jpg" alt="Greenhouse studies" loading="lazy">
+                        <picture>
+                            <source srcset="images/gallery/lab/greenhouse_plants.webp" type="image/webp">
+                            <img src="images/gallery/lab/greenhouse_plants.jpg" alt="Greenhouse studies" loading="lazy">
+                        </picture>
                         <div class="gallery-label">Greenhouse Studies</div>
                     </div>
                     <div class="gallery-grid-item">
-                        <img src="images/gallery/phenotyping/robots.jpg" alt="Phenotyping robots" loading="lazy">
+                        <picture>
+                            <source srcset="images/gallery/phenotyping/robots.webp" type="image/webp">
+                            <img src="images/gallery/phenotyping/robots.jpg" alt="Phenotyping robots" loading="lazy">
+                        </picture>
                         <div class="gallery-label">Robotic Phenotyping</div>
                     </div>
                     <div class="gallery-grid-item">
-                        <img src="images/gallery/team/team_3.jpg" alt="Crossing team Puerto Rico" loading="lazy">
+                        <picture>
+                            <source srcset="images/gallery/team/team_3.webp" type="image/webp">
+                            <img src="images/gallery/team/team_3.jpg" alt="Crossing team Puerto Rico" loading="lazy">
+                        </picture>
                         <div class="gallery-label">Puerto Rico Crossing Nursery</div>
                     </div>
                     <div class="gallery-grid-item">
-                        <img src="images/gallery/lab/cross_section_1702_vs_2235.jpg" alt="Leaf cross-section comparison between soybean lines 1702 and 2235" loading="lazy">
+                        <picture>
+                            <source srcset="images/gallery/lab/cross_section_1702_vs_2235.webp" type="image/webp">
+                            <img src="images/gallery/lab/cross_section_1702_vs_2235.jpg" alt="Leaf cross-section comparison between soybean lines 1702 and 2235" loading="lazy">
+                        </picture>
                         <div class="gallery-label">Leaf Cross-Section: 1702 vs 2235</div>
                     </div>
                     <div class="gallery-grid-item">
-                        <img src="images/gallery/lab/leaf_clearing_narrow_vs_broad.jpg" alt="Cleared soybean leaves comparing narrow and broad leaf isolines" loading="lazy">
+                        <picture>
+                            <source srcset="images/gallery/lab/leaf_clearing_narrow_vs_broad.webp" type="image/webp">
+                            <img src="images/gallery/lab/leaf_clearing_narrow_vs_broad.jpg" alt="Cleared soybean leaves comparing narrow and broad leaf isolines" loading="lazy">
+                        </picture>
                         <div class="gallery-label">Cleared Leaf Anatomy: Narrow vs Broad</div>
                     </div>
-                    <div class="gallery-grid-item">
-                        <video src="images/gallery/phenotyping/spydercam_flythrough.mp4"
+                    <div class="gallery-grid-item is-video">
+                        <video data-src="images/gallery/phenotyping/spydercam_flythrough.mp4"
                                poster="images/gallery/phenotyping/spydercam.jpg"
-                               autoplay loop muted playsinline preload="metadata"
+                               loop muted playsinline preload="none"
                                aria-label="Spydercam aerial flythrough of soybean field"></video>
+                        <span class="play-badge" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                        </span>
                         <div class="gallery-label">Spydercam Field Flythrough</div>
                     </div>
-                    <div class="gallery-grid-item">
-                        <video src="images/gallery/phenotyping/uav_flythrough_SoyFACE_2024-08-02.mp4"
+                    <div class="gallery-grid-item is-video">
+                        <video data-src="images/gallery/phenotyping/uav_flythrough_SoyFACE_2024-08-02.mp4"
                                poster="images/gallery/phenotyping/uav_flythrough_SoyFACE_2024-08-02_poster.jpg"
-                               autoplay loop muted playsinline preload="metadata"
+                               loop muted playsinline preload="none"
                                aria-label="UAV multispectral flythrough over SoyFACE soybean field, August 2024"></video>
+                        <span class="play-badge" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                        </span>
                         <div class="gallery-label">UAV Field Flythrough — SoyFACE 2024</div>
                     </div>
                     <div class="gallery-grid-item">
-                        <img src="images/gallery/phenotyping/SPAD.jpg" alt="SPAD-502 chlorophyll meter held against soybean canopy showing reading of 45.5" loading="lazy">
+                        <picture>
+                            <source srcset="images/gallery/phenotyping/SPAD.webp" type="image/webp">
+                            <img src="images/gallery/phenotyping/SPAD.jpg" alt="SPAD-502 chlorophyll meter held against soybean canopy showing reading of 45.5" loading="lazy">
+                        </picture>
                         <div class="gallery-label">SPAD Chlorophyll Readings</div>
                     </div>
                     <div class="gallery-grid-item">
-                        <img src="images/gallery/phenotyping/drone_rtf.jpg" alt="Drone RTK base station and ground control panel in field" loading="lazy">
+                        <picture>
+                            <source srcset="images/gallery/phenotyping/drone_rtf.webp" type="image/webp">
+                            <img src="images/gallery/phenotyping/drone_rtf.jpg" alt="Drone RTK base station and ground control panel in field" loading="lazy">
+                        </picture>
                         <div class="gallery-label">Drone RTK Base Station</div>
                     </div>
                     <div class="gallery-grid-item">
-                        <img src="images/gallery/phenotyping/phenotyping_1.jpg" alt="Cable-suspended camera platform over young soybean field" loading="lazy">
+                        <picture>
+                            <source srcset="images/gallery/phenotyping/phenotyping_1.webp" type="image/webp">
+                            <img src="images/gallery/phenotyping/phenotyping_1.jpg" alt="Cable-suspended camera platform over young soybean field" loading="lazy">
+                        </picture>
                         <div class="gallery-label">Cable-Suspended Aerial Imaging</div>
                     </div>
                     <div class="gallery-grid-item">
-                        <img src="images/gallery/phenotyping/phenotyping_2.jpg" alt="TerraSentia ground robot navigating between crop rows" loading="lazy">
+                        <picture>
+                            <source srcset="images/gallery/phenotyping/phenotyping_2.webp" type="image/webp">
+                            <img src="images/gallery/phenotyping/phenotyping_2.jpg" alt="TerraSentia ground robot navigating between crop rows" loading="lazy">
+                        </picture>
                         <div class="gallery-label">TerraSentia Crop Robot</div>
                     </div>
                     <div class="gallery-grid-item">
-                        <img src="images/gallery/phenotyping/phenotyping_3.jpg" alt="Multiple LI-COR 6800 portable photosynthesis systems on workshop tables" loading="lazy">
+                        <picture>
+                            <source srcset="images/gallery/phenotyping/phenotyping_3.webp" type="image/webp">
+                            <img src="images/gallery/phenotyping/phenotyping_3.jpg" alt="Multiple LI-COR 6800 portable photosynthesis systems on workshop tables" loading="lazy">
+                        </picture>
                         <div class="gallery-label">LI-COR 6800 Calibration Setup</div>
                     </div>
                     <div class="gallery-grid-item">
-                        <img src="images/gallery/phenotyping/phenotyping_4.jpg" alt="Field spectroradiometer on tripod with handheld controller in soybean canopy" loading="lazy">
+                        <picture>
+                            <source srcset="images/gallery/phenotyping/phenotyping_4.webp" type="image/webp">
+                            <img src="images/gallery/phenotyping/phenotyping_4.jpg" alt="Field spectroradiometer on tripod with handheld controller in soybean canopy" loading="lazy">
+                        </picture>
                         <div class="gallery-label">Field Spectroradiometer</div>
                     </div>
                     <div class="gallery-grid-item">
-                        <img src="images/gallery/phenotyping/phenotyping_5.jpg" alt="FLIR thermal infrared image of plant canopy showing temperature gradient" loading="lazy">
+                        <picture>
+                            <source srcset="images/gallery/phenotyping/phenotyping_5.webp" type="image/webp">
+                            <img src="images/gallery/phenotyping/phenotyping_5.jpg" alt="FLIR thermal infrared image of plant canopy showing temperature gradient" loading="lazy">
+                        </picture>
                         <div class="gallery-label">Thermal Canopy Imaging</div>
                     </div>
                     <div class="gallery-grid-item">
-                        <img src="images/gallery/phenotyping/phenotyping_6.jpg" alt="DJI Mavic 3 controller showing UAV flight planning interface over soybean field" loading="lazy">
+                        <picture>
+                            <source srcset="images/gallery/phenotyping/phenotyping_6.webp" type="image/webp">
+                            <img src="images/gallery/phenotyping/phenotyping_6.jpg" alt="DJI Mavic 3 controller showing UAV flight planning interface over soybean field" loading="lazy">
+                        </picture>
                         <div class="gallery-label">UAV Mission Planning</div>
                     </div>
                     <div class="gallery-grid-item">
-                        <img src="images/gallery/phenotyping/phenotyping_7.jpg" alt="Bench of analytical balances for gravimetric whole-plant transpiration measurements" loading="lazy">
+                        <picture>
+                            <source srcset="images/gallery/phenotyping/phenotyping_7.webp" type="image/webp">
+                            <img src="images/gallery/phenotyping/phenotyping_7.jpg" alt="Bench of analytical balances for gravimetric whole-plant transpiration measurements" loading="lazy">
+                        </picture>
                         <div class="gallery-label">Gravimetric Transpiration Lab</div>
                     </div>
                     <div class="gallery-grid-item">
-                        <img src="images/gallery/phenotyping/photosynq.jpg" alt="Laptop running PhotosynQ Desktop with MultispeQ sensor in soybean field" loading="lazy">
+                        <picture>
+                            <source srcset="images/gallery/phenotyping/photosynq.webp" type="image/webp">
+                            <img src="images/gallery/phenotyping/photosynq.jpg" alt="Laptop running PhotosynQ Desktop with MultispeQ sensor in soybean field" loading="lazy">
+                        </picture>
                         <div class="gallery-label">PhotosynQ Field Sensing</div>
                     </div>
                     <div class="gallery-grid-item">
-                        <img src="images/gallery/phenotyping/rice_flooding.jpg" alt="Greenhouse rice seedling trays with flooding tank for submergence trials" loading="lazy">
+                        <picture>
+                            <source srcset="images/gallery/phenotyping/rice_flooding.webp" type="image/webp">
+                            <img src="images/gallery/phenotyping/rice_flooding.jpg" alt="Greenhouse rice seedling trays with flooding tank for submergence trials" loading="lazy">
+                        </picture>
                         <div class="gallery-label">Rice Submergence Trials</div>
                     </div>
                 </div>
@@ -1938,25 +2306,44 @@
     </div>
 
     <script>
-        // Theme Toggle
-        function toggleTheme() {
-            const html = document.documentElement;
+        // Theme Toggle — the theme itself is applied in <head> before first paint;
+        // this only keeps the button icon and localStorage in sync.
+        function syncThemeIcon() {
             const icon = document.getElementById('theme-icon');
-            if (html.getAttribute('data-theme') === 'dark') {
-                html.removeAttribute('data-theme');
-                icon.textContent = '☀️';
-                localStorage.setItem('theme', 'light');
-            } else {
-                html.setAttribute('data-theme', 'dark');
-                icon.textContent = '🌙';
-                localStorage.setItem('theme', 'dark');
-            }
+            if (!icon) return;
+            const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+            icon.textContent = isDark ? '🌙' : '☀️';
+            const btn = icon.closest('.theme-toggle');
+            if (btn) btn.setAttribute('aria-label', isDark ? 'Switch to light theme' : 'Switch to dark theme');
         }
 
-        // Load saved theme
-        if (localStorage.getItem('theme') === 'dark') {
-            document.documentElement.setAttribute('data-theme', 'dark');
-            document.getElementById('theme-icon').textContent = '🌙';
+        function toggleTheme() {
+            const html = document.documentElement;
+            const nowDark = html.getAttribute('data-theme') !== 'dark';
+            if (nowDark) {
+                html.setAttribute('data-theme', 'dark');
+            } else {
+                html.removeAttribute('data-theme');
+            }
+            try { localStorage.setItem('theme', nowDark ? 'dark' : 'light'); } catch (e) {}
+            syncThemeIcon();
+        }
+
+        syncThemeIcon();
+
+        // Follow the OS theme until the visitor makes an explicit choice
+        if (window.matchMedia) {
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+                let saved = null;
+                try { saved = localStorage.getItem('theme'); } catch (err) {}
+                if (saved !== null) return;
+                if (e.matches) {
+                    document.documentElement.setAttribute('data-theme', 'dark');
+                } else {
+                    document.documentElement.removeAttribute('data-theme');
+                }
+                syncThemeIcon();
+            });
         }
 
         // Navigation scroll effect
@@ -1970,16 +2357,87 @@
         });
 
         // Smooth scroll for anchor links
+        const prefersReducedMotion = window.matchMedia
+            ? window.matchMedia('(prefers-reduced-motion: reduce)')
+            : { matches: false };
+
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                const href = this.getAttribute('href');
+                const behavior = prefersReducedMotion.matches ? 'auto' : 'smooth';
+
+                // Bare "#" (the logo) means "back to top" — querySelector('#') would throw.
+                if (href === '#') {
+                    e.preventDefault();
+                    window.scrollTo({ top: 0, behavior });
+                    closeMobileMenu();
+                    return;
                 }
+
+                let target = null;
+                try {
+                    target = document.querySelector(href);
+                } catch (err) {
+                    return; // not a usable selector; let the browser handle it
+                }
+                if (!target) return;
+
+                e.preventDefault();
+                target.scrollIntoView({ behavior, block: 'start' });
+                closeMobileMenu();
+
+                // Move keyboard focus along with the viewport (skip link, nav links)
+                if (!target.hasAttribute('tabindex')) target.setAttribute('tabindex', '-1');
+                target.focus({ preventScroll: true });
             });
         });
 
+
+        // Scrollspy — highlight the nav link for the section currently in view
+        (function() {
+            const links = Array.from(document.querySelectorAll('.nav-links a[href^="#"]'))
+                .filter(a => a.getAttribute('href').length > 1);
+            if (!links.length || !('IntersectionObserver' in window)) return;
+
+            const byId = new Map();
+            const sections = [];
+            links.forEach(link => {
+                const id = link.getAttribute('href').slice(1);
+                const section = document.getElementById(id);
+                if (section) {
+                    byId.set(id, link);
+                    sections.push(section);
+                }
+            });
+
+            const visible = new Set();
+
+            function setActive(id) {
+                links.forEach(a => a.classList.remove('is-active'));
+                const link = byId.get(id);
+                if (link) link.classList.add('is-active');
+            }
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        visible.add(entry.target.id);
+                    } else {
+                        visible.delete(entry.target.id);
+                    }
+                });
+
+                // Of the sections currently in view, mark the topmost one
+                const current = sections.find(s => visible.has(s.id));
+                if (current) setActive(current.id);
+            }, {
+                // Trigger once a section reaches the upper third of the viewport
+                rootMargin: '-30% 0px -60% 0px',
+                threshold: 0
+            });
+
+            sections.forEach(s => observer.observe(s));
+        })();
 
         // Publication tabs
         function showPubCategory(category, btn) {
@@ -1994,22 +2452,39 @@
         }
 
 
-        // Mobile menu toggle
-        function toggleMobileMenu() {
+        // Mobile menu toggle — class-based so no inline style leaks to desktop widths
+        function closeMobileMenu() {
             const navLinks = document.querySelector('.nav-links');
-            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
-            if (navLinks.style.display === 'flex') {
-                navLinks.style.position = 'absolute';
-                navLinks.style.top = '70px';
-                navLinks.style.left = '0';
-                navLinks.style.right = '0';
-                navLinks.style.flexDirection = 'column';
-                navLinks.style.background = 'var(--color-paper)';
-                navLinks.style.padding = '1rem 2rem';
-                navLinks.style.borderBottom = '1px solid var(--color-border)';
-                navLinks.style.gap = '1rem';
+            const btn = document.querySelector('.mobile-menu-btn');
+            if (!navLinks) return;
+            navLinks.classList.remove('is-open');
+            if (btn) {
+                btn.classList.remove('is-open');
+                btn.setAttribute('aria-expanded', 'false');
             }
         }
+
+        function toggleMobileMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            const btn = document.querySelector('.mobile-menu-btn');
+            if (!navLinks) return;
+            const open = navLinks.classList.toggle('is-open');
+            if (btn) {
+                btn.classList.toggle('is-open', open);
+                btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+            }
+        }
+
+        // Close the menu if the viewport grows past the mobile breakpoint
+        if (window.matchMedia) {
+            window.matchMedia('(min-width: 769px)').addEventListener('change', (e) => {
+                if (e.matches) closeMobileMenu();
+            });
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeMobileMenu();
+        });
 
         // News card modal
         (function() {
@@ -2085,7 +2560,8 @@
                 if (isVideo) {
                     lbImage.style.display = 'none';
                     lbVideo.style.display = '';
-                    lbVideo.src = media.currentSrc || media.src;
+                    // Tiles carry the file in data-src so nothing downloads until opened
+                    lbVideo.src = media.dataset.src || media.currentSrc || media.src;
                     lbVideo.muted = false;
                     lbVideo.play().catch(() => {});
                 } else {

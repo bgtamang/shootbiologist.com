@@ -1,5 +1,6 @@
-# Old versions (now tracked by Git history)
+# Old versions and scratch copies (now tracked by Git history)
 index-V*.html
+index-test.html
 
 # Installers
 *.exe
@@ -13,3 +14,10 @@ headshot-old.jpg
 # OS files
 Thumbs.db
 .DS_Store
+
+# Python
+__pycache__/
+*.pyc
+
+# Temp files from optimize_images.py, if a run is interrupted
+*.__opt__.*
